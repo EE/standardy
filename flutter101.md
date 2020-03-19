@@ -48,7 +48,7 @@
   
   * [Cookbook](https://flutter.dev/docs/cookbook) - rozwiązania konkretnych kwestii; nie trzeba wszystkiego czytać, ale warto przejrzeć żeby wiedzieć co jest.
 
-* [Nagrania wykładów z konferencji Flutter Europe](https://www.youtube.com/channel/UCOoJkGYV00nr3EpZOUeuN1Q/videos).
+* [Nagrania wykładów z konferencji Flutter Europe](https://www.youtube.com/channel/UCOoJkGYV00nr3EpZOUeuN1Q/videos)
 
   Dużo wykładów - niektóre nudne, niektóre fajne. Obejrzenie prezentacji ["Implementing complex UI with Flutter"](https://www.youtube.com/watch?v=FCyoHclCqc8) Marcina Szałka powinno być jednak obowiązkowe dla kazdego kto chce tworzyć piękne, unikalne aplikalne we Flutterze.
 
