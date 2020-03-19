@@ -10,7 +10,7 @@ Dokumenty były tworzone z myślą o użytku wewnętrznym w Laboratorium, ale ud
   * [Frontend](project_development_frontend.md)
   * [Mobile](project_development_mobile.md)
 * [Zasady (i poradnik) pracy z gitem](gitflow.md)
-* [Checklista przy uruchamianiu projektów na produkcj](launch_checklist.md)
+* [Checklista przy uruchamianiu projektów na produkcji](launch_checklist.md)
 * [Checklista konfiguracji repozytoriów](new_repo_checklist.md)
 
 ## Porady
