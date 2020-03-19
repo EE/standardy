@@ -2,7 +2,7 @@
 
 Poniżej znajdują się linki do najważniejszych dokumentów dotyczących pracy programistek i programistów w Laboratorium EE.
 
-Dokumenty były tworzone z myślą o użytku wewnętrznym w Laboratorium, ale udostępniamy je publicznie - być może komuś się przydadzą. Wszystkie opublikowane są na [licencji CreativeCommons](LICENSE). 
+Dokumenty były tworzone z myślą o użytku wewnętrznym w Laboratorium, ale udostępniamy je publicznie - być może komuś się przydadzą. Wszystkie opublikowane są na [licencji Creative Commons](LICENSE). 
 
 ## Zasady
 * [Zasady rozwijania projektów](project_development.md)
