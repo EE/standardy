@@ -1,4 +1,4 @@
-# Niezbędnik Programistów Laboratorium EE
+# Niezbędnik Programistyczny Laboratorium EE
 
 Poniżej znajdują się linki do najważniejszych dokumentów dotyczących pracy programistek i programistów w Laboratorium EE.
 
