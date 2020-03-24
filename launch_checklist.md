@@ -18,9 +18,10 @@
 1. W nagłówku strony ustawione są odpowiednie metadane, w szczególności tag `title`, oraz właściwości meta: `description`, `viewport`, `og:image`, `og:site_name`. Działanie metadanych zostało przetestowane m.in. przez wstawienie linka do strony na Slacku i Facebooku i obejrzenie wygenerowanego poglądu strony.
 2. Działanie i wygląd strony zostało sprawdzone zarówno na przeglądarkach mobilnych jak i przeglądarkach desktopowych.
 3. Zostały zdefiniowane strony błędów 404 i 500 spójne z wyglądem serwisu.
-4. Grafiki wykorzystywane na stronie są wektorowe (najlepiej) lub w rozdzielczości wystarczającej dla ekranów retina. Do sprawdzenia tego można użyć [automatycznych narzędzi](http://www.retinaextension.com/).
-5. Domena z `www.` przkierowuje do wersji bez www (jeśli ograniczenia techniczne serwera DNS narzucają obecność serwisu pod subdomeną, dopuszczalne jest odwrotne przekierowanie).
-6. Wykonano audyty w kategoriach *Best practises*, *Accessibility*, *SEO*, *Performance* w narzędziu Lighhouse wbudowanych w Google Chrome (*View / Developer / Developer Tools / Audits*). Nie jest wymagane spełnienie każdego zalecenia z raportu, ale jest wymagane dokładne przejrzenie wszystkich i podjęcie świadomych decyzji dotyczących tego które zostaną zaimplementowane.
+4. Zwracając się do użytkowników/użytkowniczek oraz pisząc o nich aplikacja używa w komunikatach końcówek neutralnych płciowo (np. zamiast "czy chciałbyś..." można napisać "czy chcesz...").
+5. Grafiki wykorzystywane na stronie są wektorowe (najlepiej) lub w rozdzielczości wystarczającej dla ekranów retina. Do sprawdzenia tego można użyć [automatycznych narzędzi](http://www.retinaextension.com/).
+6. Domena z `www.` przkierowuje do wersji bez www (jeśli ograniczenia techniczne serwera DNS narzucają obecność serwisu pod subdomeną, dopuszczalne jest odwrotne przekierowanie).
+7. Wykonano audyty w kategoriach *Best practises*, *Accessibility*, *SEO*, *Performance* w narzędziu Lighhouse wbudowanych w Google Chrome (*View / Developer / Developer Tools / Audits*). Nie jest wymagane spełnienie każdego zalecenia z raportu, ale jest wymagane dokładne przejrzenie wszystkich i podjęcie świadomych decyzji dotyczących tego które zostaną zaimplementowane.
 
 ## Wydajność
 1. Pliki statyczne są zminimalizowane. W przypadku plików CSS i JS oznacza to skonfigurowanie automatycznego narzędzia do minimalizacji. W przypadku plików graifcznych oznacza to użycie odpowiedniego formatu (jpeg dla zdjęć, png dla rysunków i grafik), kompresji i wymiarów. W odpowiedniej kompresji opornych plików graficznych przydają się narzędzia takie jak [ImageOptim](https://imageoptim.com/) (lub [TinyPNG](https://tinypng.com/)) oraz [pngquant](https://pngquant.org/). 
