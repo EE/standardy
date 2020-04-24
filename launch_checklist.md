@@ -13,6 +13,7 @@
 6. Baza danych ma [skonfigurowane automatyczne backupy](https://devcenter.heroku.com/articles/heroku-postgres-backups#scheduling-backups).
 7. W bazie danych nie ma użytkowników Django z ustawienionymi "testowymi" hasłami. W szczególności użytkownicy o uprawnieniach administratora mają mocne hasła.
 8. Serwis jest skonfigurowany z narzędziem Sentry do którego trafiają wyjątki występujące podczas jego działania. Jest wyznaczona osoba odpowiedzialna za czytanie tych zgłoszeń.
+9. Wykonano audyt bezpieczeństwa Django [Pony Checkup](https://www.ponycheckup.com/).
 
 ## Prezentacja
 1. W nagłówku strony ustawione są odpowiednie metadane, w szczególności tag `title`, oraz właściwości meta: `description`, `viewport`, `og:image`, `og:site_name`. Działanie metadanych zostało przetestowane m.in. przez wstawienie linka do strony na Slacku i Facebooku i obejrzenie wygenerowanego poglądu strony.
