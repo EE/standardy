@@ -30,6 +30,7 @@ Lista standardowych komponentów których używamy w projektach przy budowaniu b
 | Zarządzanie ustawieniami w adminie          | [django-constance][django-constance]                    |
 | Skład plików media w AWS S3 (i innych CDNach) | [django-storages](https://django-storages.readthedocs.io) |
 | Przetwarzanie obrazów                       | [django-imagekit][django-imagekit]
+| Import i eksport danych                     | [django-import-export][django-import-export]            |
 
 [generator-ee]: https://github.com/EE/generator-ee
 [django]: https://www.djangoproject.com/
@@ -43,6 +44,7 @@ Lista standardowych komponentów których używamy w projektach przy budowaniu b
 [django-admin-sortable2]: https://github.com/jrief/django-admin-sortable2
 [django-modeltranslation]: https://github.com/deschler/django-modeltranslation
 [django-ckeditor]: https://github.com/django-ckeditor/django-ckeditor/
+[django-import-export]: https://github.com/django-import-export/django-import-export
 [django-rest-framework]: http://www.django-rest-framework.org/
 [requests]: http://docs.python-requests.org/en/master/
 [django-constance]: https://github.com/jazzband/django-constance
