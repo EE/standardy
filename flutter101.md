@@ -2,7 +2,7 @@
 
 * [Kurs od Academind](https://pro.academind.com/p/learn-flutter-dart-to-build-ios-android-apps-2020)
 
-  Kompletny kurs przygotowany przez znanego twórcę frontendowych kursów Maximiliana Schwarzmüllera. W przystępny sposób uczy krok po kroku od zera aż do dość zaawansowanych tematów. Merytorycznie zazwyczaj poziom jest wysoki (istnieją [wyjątki](https://board.academind.com/t/mutable-properties-in-a-widget-an-antipattern-in-the-personal-expenses-app/282), ale kurs jest aktualizowany i z niegiem czasu udoskonalany). Warto dostosować do swoich potrzeb prędkość odtwarzania - prowadzący mówi dość wolno. 
+  Kompletny kurs przygotowany przez znanego twórcę frontendowych kursów Maximiliana Schwarzmüllera. W przystępny sposób uczy krok po kroku od zera aż do dość zaawansowanych tematów. Merytorycznie zazwyczaj poziom jest wysoki (istnieją [wyjątki](https://board.academind.com/t/mutable-properties-in-a-widget-an-antipattern-in-the-personal-expenses-app/282), ale kurs jest aktualizowany i z biegiem czasu udoskonalany). Warto dostosować do swoich potrzeb prędkość odtwarzania - prowadzący mówi dość wolno. 
   
   Popularną alternatywą jest [kurs od The App Brewery](https://www.appbrewery.co/p/flutter-development-bootcamp-with-dart) polecany przez Google. Też jest spoko, ale wchodzi w tematy mniej głęboko, a za to poświęca dużo czasu na tłumaczenie podstawowych koncepcji programistycznych. Jest to dobre podejście dla osób uczących się programować po raz pierwszy, ale dla  umiejących już programować w innych językach może być to nudne.
 
