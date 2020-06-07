@@ -38,7 +38,7 @@
 
   Oficjalna dokumentacja Fluttera jest bardzo dobrze napisana. Szczególnie warte przeczytania są następujące części:
   
-  * [User interface](https://flutter.dev/docs/development/ui/)
+  * [User interface](https://flutter.dev/docs/development/ui/) (zwłaszcza artykuł ["Understanding constraints"](https://flutter.dev/docs/development/ui/layout/constraints))
   
   * [Data & backend](https://flutter.dev/docs/development/data-and-backend)
   
