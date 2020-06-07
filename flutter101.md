@@ -1,11 +1,11 @@
 # Materiały do uczenia się Fluttera
 
-* [Kurs od The App Brewery](https://www.appbrewery.co/p/flutter-development-bootcamp-with-dart)
+* [Kurs od Academind](https://pro.academind.com/p/learn-flutter-dart-to-build-ios-android-apps-2020)
 
-  Mamy wykupiony dostęp. Kurs jest fajny, bo przedstawia wszystko bardzo spokojnie, krok po kroku. Nie zakłada jednak żadnego doświadczenia programistycznego. Prowadząca zazwyczaj ostrzega gdy mają nastąpić sekcje które bardziej opowiadają o fundamentach programistycznych niż o samym Flutterze. Jeśli któryś z tych fundamentalnych tematów jest Ci dobrze znany możesz spokojnie go pominąć. Jeśli czujesz się swobodnie z programowaniem obiektowym możesz pominąć nawet cały rozdział “Quizzler Project”.
+  Kompletny kurs przygotowany przez znanego twórcę frontendowych kursów Maximiliana Schwarzmüllera. W przystępny sposób uczy krok po kroku od zera aż do dość zaawansowanych tematów. Merytorycznie zazwyczaj poziom jest wysoki (istnieją [wyjątki](https://board.academind.com/t/mutable-properties-in-a-widget-an-antipattern-in-the-personal-expenses-app/282), ale kurs jest aktualizowany i z niegiem czasu udoskonalany). Warto dostosować do swoich potrzeb prędkość odtwarzania - prowadzący mówi dość wolno. 
   
-  Warto również dostosować do swoich potrzeb prędkość odtwarzania - prowadząca mówi dość wolno. Można to zrobić pod ikoną trybiku na górze ekranu (ikona przy odtwarzaczu też posiada taką opcję, ale dotyczy ona tylko danego wideo, a nie całego kursu).
-  
+  Popularną alternatywą jest [kurs od The App Brewery](https://www.appbrewery.co/p/flutter-development-bootcamp-with-dart) polecany przez Google. Też jest spoko, ale wchodzi w tematy mniej głęboko, a za to poświęca dużo czasu na tłumaczenie podstawowych koncepcji programistycznych. Jest to dobre podejście dla osób uczących się programować po raz pierwszy, ale dla  umiejących już programować w innych językach może być to nudne.
+
 * [Flutter guide](https://github.com/devonfw-forge/devonfw4flutter)
 
   Dobry jako kolejny krok po kursie. Pomaga uporządkować wiedzę i poznać podstawowe dobre praktyki.
