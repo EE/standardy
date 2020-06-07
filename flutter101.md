@@ -24,15 +24,11 @@
     
   * [Flutter in Focus](https://www.youtube.com/playlist?list=PLjxrf2q8roU2HdJQDjJzOeO6J3FoFLWr2)
     
-    Każdy filmik w około 10 minut przedstawia jeden temat. Koniecznie trzeba zobaczyć przynajmniej 5 filmów składających się na serię [Flutter Widgets 101](https://www.youtube.com/playlist?list=PLOU2XLYxmsIJyiwUPCou_OVTpRIn_8UMd), ale inne też są przydatne.
-    
-  * [Pragmatic State Management in Flutter](https://www.youtube.com/watch?v=d_m5csmrf7I)
-  
-    Nie playlista, a pojedyncza prezentacja z Google I/O'19 pokazująca jeden z (wielu możliwych) sposobów łączenia interfejsu Fluttera z logiką biznesową.
+    Każdy filmik w około 10 minut przedstawia jeden temat. Koniecznie trzeba zobaczyć przynajmniej 5 filmów składających się na serię [Flutter Widgets 101](https://www.youtube.com/playlist?list=PLOU2XLYxmsIJyiwUPCou_OVTpRIn_8UMd) oraz 6 filmów z serii [Making Animations in Flutter](https://www.youtube.com/playlist?list=PLjxrf2q8roU2v6UqYlt_KPaXlnjbYySua), ale inne też są przydatne.
     
   * [The Boring Flutter Development Show](https://www.youtube.com/playlist?list=PLjxrf2q8roU3ahJVrSgAnPjzkpGmL9Czl)
     
-    Jestem wielkim fanem tej serii, ale przeznaczona ona jest raczej dla najbardziej wytrwałych. Każdy odcinek trwa około godziny i zawiera pracowników Google kodujących i debugujących na żywo. Można się bardzo wiele nauczyć, ale to raczej na długie zimowe wieczory.
+    Jestem fanem tej serii, ale przeznaczona ona jest raczej dla najbardziej wytrwałych. Każdy odcinek trwa około godziny i zawiera pracowników Google kodujących i debugujących na żywo. Można się bardzo wiele nauczyć, ale to raczej na długie zimowe wieczory.
     
 * [Oficjalna Dokumentacja](https://flutter.dev/docs)
 
