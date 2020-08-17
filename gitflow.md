@@ -94,6 +94,8 @@ Jeśli w międzyczasie na branchu *develop* w główny repozytorium projektu poj
 
 *Jeśli komenda zwróci komunikat "Your local changes to the following files would be overwritten by merge" oznacza to, że Twoje zmiany dotyczą tych samych plików co zmiany w nowo dodanych commitach. Ukryj na chwilę swoje zmiany przy pomocy komendy `git stash`, ponów komendę `git pull  upstream develop --rebase`, a następnie przywróć swoje zmiany komendą `git stash pop` (jeśli ta ostatnia wyświetla informację "CONFLICT", otwórz pliki podane w komunikacie i rozwiąż w nich konflikty).*
 
+*Jeśli wcześniej już wysyłałaś zmiany z tego brancha do zdalnego repozytorium (przez `git push`) to jednorazowo najbliższy push będzie musiał być wymuszony (`git push --force`). Git wymaga takiego potwierdzenia ze względu na to że operacja rebase zmienia historię w branchu.*
+
 ### 6. Kontrola wprowadzonych zmian
 
 Skontroluj status swoich zmian:
