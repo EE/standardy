@@ -7,13 +7,14 @@
     * `SECURE_HSTS_SECONDS = 31536000`, `SECURE_HSTS_PRELOAD = True` (zapamiętywanie wyboru wersji SSL w przeglądarce)
     * `CSRF_COOKIE_SECURE = True` (przesyłąnie ciasteczek csrf wyłącznie przez połączenia SSL)
     * `SESSION_COOKIE_SECURE = True` (przesyłanie ciasteczek sesji wyłącznie przez połączenia SSL)
-3. Serwis **nie** działa w trybie `DEBUG`. Wiąże się to z ustawieniem `DEBUG = FALSE`, ale należy dodatkowo zweryfikować tryb poprzez wyświetlenie ekranu błędu 404 (który wygląda różnie zależnie od wartości `DEBUG`).
+3. Serwis **nie** działa w trybie `DEBUG`. Wiąże się to z ustawieniem `DEBUG = FALSE`, ale należy dodatkowo zweryfikować tryb poprzez wyświetlenie ekranu błędu 404 (który wygląda różnie zależnie od wartości `DEBUG`)
 4. W ustawieniach Django włączone są middleware związane z bezpieczeństwem: `XFrameOptionsMiddleware`, `SecurityMiddleware`.
-5. Serwis używa [bazy danych o odpowiednich parametrach](https://www.heroku.com/pricing#postgres-pricing) (w przypadku Heroku oznacza to zwykle płatną bazę danych, poza sytuacjami bardzo małych, niemal statycznych stron).
-6. Baza danych ma [skonfigurowane automatyczne backupy](https://devcenter.heroku.com/articles/heroku-postgres-backups#scheduling-backups).
-7. W bazie danych nie ma użytkowników Django z ustawienionymi "testowymi" hasłami. W szczególności użytkownicy o uprawnieniach administratora mają mocne hasła.
-8. Serwis jest skonfigurowany z narzędziem Sentry do którego trafiają wyjątki występujące podczas jego działania. Jest wyznaczona osoba odpowiedzialna za czytanie tych zgłoszeń.
-9. Wykonano audyt bezpieczeństwa Django [Pony Checkup](https://www.ponycheckup.com/).
+5. W ustawieniach Django na `True` ustawione są stałe związane z bezpieczeństwem: `SECURE_BROWSER_XSS_FILTER`, `SECURE_CONTENT_TYPE_NOSNIFF`
+6. Serwis używa [bazy danych o odpowiednich parametrach](https://www.heroku.com/pricing#postgres-pricing) (w przypadku Heroku oznacza to zwykle płatną bazę danych, poza sytuacjami bardzo małych, niemal statycznych stron).
+7. Baza danych ma [skonfigurowane automatyczne backupy](https://devcenter.heroku.com/articles/heroku-postgres-backups#scheduling-backups).
+8. W bazie danych nie ma użytkowników Django z ustawienionymi "testowymi" hasłami. W szczególności użytkownicy o uprawnieniach administratora mają mocne hasła.
+9. Serwis jest skonfigurowany z narzędziem Sentry do którego trafiają wyjątki występujące podczas jego działania. Jest wyznaczona osoba odpowiedzialna za czytanie tych zgłoszeń.
+10. Wykonano audyt bezpieczeństwa Django [DJ Checkup](https://djcheckup.com/).
 
 ## Prezentacja
 1. W nagłówku strony ustawione są odpowiednie metadane, w szczególności tag `title`, oraz właściwości meta: `description`, `viewport`, `og:image`, `og:site_name`. Działanie metadanych zostało przetestowane m.in. przez wstawienie linka do strony na Slacku i Facebooku i obejrzenie wygenerowanego poglądu strony.
