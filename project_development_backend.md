@@ -25,7 +25,7 @@ Lista standardowych komponentów których używamy w projektach przy budowaniu b
 | *Context processor* dla ustawień            | [django-settings-context-processor][settings-con-procs] |
 | Tłumaczenia treści                          | [django-modeltranslation][django-modeltranslation]      |
 | Edytor WYSIWYG                              | [django-ckeditor][django-ckeditor]                      |
-| Generowanie REST API                        | [Django Rest Framework][django-rest-framework]          |
+| Generowanie REST API                        | [Django Rest Framework][django-rest-framework]          | autentykacja oparta na tokenie
 | Szeregowanie wpisów w adminie               | [django-admin-sortable2][django-admin-sortable2]        |
 | Zarządzanie ustawieniami w adminie          | [django-constance][django-constance]                    |
 | Skład plików media w AWS S3 (i innych CDNach) | [django-storages](https://django-storages.readthedocs.io) |
