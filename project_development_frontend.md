@@ -6,12 +6,13 @@
 1. Używamy stacku technologicznego opartego na Vue, Nuxt, Vuex i Vue-Router (wyjątkiem mogą być strony treściowe zarządzane przez CMS, dla których dopuszczalne jest użycie [Wagtaila](https://wagtail.io/)).
 1. Nie używamy <strike>jQuery</strike>. Nie. Nie ma mowy.
 2. Piszemy kod korzystający z funkcjonalności ECMAScript 2015+, który jest konwertowany na kod przyjazny dla przeglądarek przez [Babel](https://babeljs.io/). W szczególności korzystamy z podziału kodu na moduły.
-3. Korzystamy z Vue Single File Components (plików `.vue`). W szczególności wszystkie style specyficzne dla danego komponentu wizualnego powinny znajdować się wewnątrz jego pliku. Nazwa takiego pliku powinna być identyczna z nazwą komponentu który zawiera.
 3. Dane aplikacji przechowujemy w Vuex. Powinny być one logicznie podzielone na wydzielone (`namespaced: true`) moduły. Kod operujący na tych danych (w tym pobierający je z zewnętrznego API) powinien znajdować się w akcjach (*actions*) odpowiedniego modułu.
-4. Pisząc wizualne komponenty, preferujemy kompozycję (osadzanie komponentów wewnątrz innych komponentów) ponad dziedziczenie (w tym używanie mixinów).
-5. Piszemy testy korzystając z [Jest](https://jestjs.io/). Stopień otestowania zależny jest od projektu, ale w każdym projekcie powinny istnieć testy obejmujące przynajmniej kilka wybranych, najbardziej newralgicznych elementów. Testy powinny być automatycznie wykonywane przez system CI. 
-6. Zewnętrzne zależności JavaScript instalujemy przez `npm` i inportujemy w projekcie - nie kopiujemy zewnętrznego kodu do repozytorium projektu.
-7. W projektach powinien być skonfigurowany linter [eslint](https://eslint.org/) ([wzorcowa konfiguracja](https://github.com/EE/generator-ee/blob/develop/%7B%7Bcookiecutter.project_slug%7D%7D/.eslintrc.yml)), skonfigurowany z systemem CI.
+4. Korzystamy z Vue Single File Components (plików `.vue`). W szczególności wszystkie style specyficzne dla danego komponentu wizualnego powinny znajdować się wewnątrz jego pliku. Nazwa takiego pliku powinna być identyczna z nazwą komponentu który zawiera.
+5. Pisząc komponenty Vue, preferujemy kompozycję (osadzanie komponentów wewnątrz innych komponentów) ponad dziedziczenie (w tym używanie mixinów).
+6. Świadomie odróżniamy komponenty prezentacyjne (które przyjmują dane przez `props` i wyświetlają je w określony sposób) od "mądrych" (*smart*) komponentów (które czerpią dane z różnych źródeł, takich jak Vuex, i zawierają bardziej skomplikowaną logikę biznesową).
+7. Piszemy testy korzystając z [Jest](https://jestjs.io/). Stopień otestowania zależny jest od projektu, ale w każdym projekcie powinny istnieć testy obejmujące przynajmniej kilka wybranych, najbardziej newralgicznych elementów. Testy powinny być automatycznie wykonywane przez system CI. 
+8. Zewnętrzne zależności JavaScript instalujemy przez `npm` i inportujemy w projekcie - nie kopiujemy zewnętrznego kodu do repozytorium projektu.
+9. W projektach powinien być skonfigurowany linter [eslint](https://eslint.org/) ([wzorcowa konfiguracja](https://github.com/EE/generator-ee/blob/develop/%7B%7Bcookiecutter.project_slug%7D%7D/.eslintrc.yml)), skonfigurowany z systemem CI.
 
 
 ## Style
