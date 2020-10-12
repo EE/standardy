@@ -7,13 +7,13 @@
 1. Nie używamy <strike>jQuery</strike>. Nie. Nie ma mowy.
 2. Piszemy kod korzystający z funkcjonalności ECMAScript 2015+, który jest konwertowany na kod przyjazny dla przeglądarek przez [Babel](https://babeljs.io/). W szczególności korzystamy z podziału kodu na moduły.
 3. Przestrzegamy rekomendacji spisanych w opcjalnym [Style Guidzie Vue](https://vuejs.org/v2/style-guide/). Oznacza to między innymi stosowanie odpowiednich konwencji nazewnictwa:
-  * Nazwy komponentów używają *PascalCase*
-  * [Nazwy komponentów muszą być co najmniej dwuczłonowe](https://vuejs.org/v2/style-guide/#Multi-word-component-names-essential)
-  * [Każdy komponent znajduje się w osobnym pliku](https://vuejs.org/v2/style-guide/#Single-file-component-filename-casing-strongly-recommended), [którego nazwa jest identyczna z nazwą komponentu (czyli też używa *PascalCase*)](https://vuejs.org/v2/style-guide/#Single-file-component-filename-casing-strongly-recommended)
-  * [Nazwy komponentów używane jako tagi w templatkach są identyczne do oryginalnej nazwy komponentu (czyli też używają *PascalCase*)](https://vuejs.org/v2/style-guide/#Component-name-casing-in-templates-strongly-recommended)
-  * [Komponenty prezentacyjne (takie które przyjmują dane przez `props` i wyświetlają je w określony sposób, bez wchodzenia w logikę biznesową) używają przedrostka `App`](https://vuejs.org/v2/style-guide/#Base-component-names-strongly-recommended)
-  * [Komponenty które z samego swojego założenia pojawiają się w aplikacji tylko raz używają przedrosta `The`](https://vuejs.org/v2/style-guide/#Single-instance-component-names-strongly-recommended)
-  * [Komponenty które z założenia powinny być wyświetlane jako dziecko konkretnego komponentu używają przedrostka z nazwą tego rodzica](https://vuejs.org/v2/style-guide/#Tightly-coupled-component-names-strongly-recommended)
+    * Nazwy komponentów używają *PascalCase*
+    * [Nazwy komponentów muszą być co najmniej dwuczłonowe](https://vuejs.org/v2/style-guide/#Multi-word-component-names-essential)
+    * [Każdy komponent znajduje się w osobnym pliku](https://vuejs.org/v2/style-guide/#Single-file-component-filename-casing-strongly-recommended), [którego nazwa jest identyczna z nazwą komponentu (czyli też używa *PascalCase*)](https://vuejs.org/v2/style-guide/#Single-file-component-filename-casing-strongly-recommended)
+    * [Nazwy komponentów używane jako tagi w templatkach są identyczne do oryginalnej nazwy komponentu (czyli też używają *PascalCase*)](https://vuejs.org/v2/style-guide/#Component-name-casing-in-templates-strongly-recommended)
+    * [Komponenty prezentacyjne (takie które przyjmują dane przez `props` i wyświetlają je w określony sposób, bez wchodzenia w logikę biznesową) używają przedrostka `App`](https://vuejs.org/v2/style-guide/#Base-component-names-strongly-recommended)
+    * [Komponenty które z samego swojego założenia pojawiają się w aplikacji tylko raz używają przedrosta `The`](https://vuejs.org/v2/style-guide/#Single-instance-component-names-strongly-recommended)
+    * [Komponenty które z założenia powinny być wyświetlane jako dziecko konkretnego komponentu używają przedrostka z nazwą tego rodzica](https://vuejs.org/v2/style-guide/#Tightly-coupled-component-names-strongly-recommended)
 4. Staramy się jak najbardziej wykorzystywać konwencje i funkcjonalności przychodzę z Nuxt.js (np. [routing oparty na komponentach w katalogu `pages/`](https://nuxtjs.org/guide/routing)).
 3. Dane aplikacji przechowujemy w Vuex. Powinny być one logicznie podzielone na wydzielone (`namespaced: true`) moduły, [podzielone na pliki zgodnie z konwencją Nuxt](https://nuxtjs.org/guide/modules). Kod operujący na tych danych (w tym pobierający je z zewnętrznego API) powinien znajdować się w akcjach (*actions*) odpowiedniego modułu.
 4. Korzystamy z Vue Single File Components (plików `.vue`). W szczególności wszystkie style specyficzne dla danego komponentu wizualnego powinny znajdować się wewnątrz jego pliku.
@@ -29,10 +29,10 @@
 3. Style piszemy w [SASS](https://sass-lang.com/) i staramy się używać funkcjonalności SASS (np. zmienne, `@include`) żeby uczynić kod łatwiejszym w zarządzeniu.
 4. Nie używamy jednak operatora `&` z SASS w sposób który rozdzielałby nazwę klasy (gdzie nazwa zagnieżdżonej klasy zawiera nazwę rodzica).
 5. W miejsce jednego dużego frameworku CSS używamy w razie potrzeby małych bibliotek spełniających jedną funkcję:
-  * Zapewnienie spójności styli w przeglądarkach: [reset.css](https://www.npmjs.com/package/reset-css)
-  * Pozycjonowanie elementów w gridzie / kolumnach: [Neutron](http://neutroncss.com/) (jeśli Flexbox i CSS Grid nie wystarczają)
-  * Łatwa i spójna obsługa breakpointów: [@include-media](https://include-media.com/)
-  * Gotowe komponenty wizualne: komponenty Material Design z [Vuetify](https://vuetifyjs.com/en/).
+    * Zapewnienie spójności styli w przeglądarkach: [reset.css](https://www.npmjs.com/package/reset-css)
+    * Pozycjonowanie elementów w gridzie / kolumnach: [Neutron](http://neutroncss.com/) (jeśli Flexbox i CSS Grid nie wystarczają)
+    * Łatwa i spójna obsługa breakpointów: [@include-media](https://include-media.com/)
+    * Gotowe komponenty wizualne: komponenty Material Design z [Vuetify](https://vuetifyjs.com/en/).
 6. Trzymamy się zasady *mobile first* - style powinny opisywać najmniejszy obsługiwany breakpoint, z modyfikacjami dla większych breakpointów jako odrębny blok `@media`
 7. W projektach powinien być skonfigurowany linter [style-lint](https://stylelint.io/) ([wzorcowa konfiguracja](https://github.com/EE/generator-ee/blob/develop/%7B%7Bcookiecutter.project_slug%7D%7D/.stylelintrc)), skonfigurowany z systemem CI.
 8. O ile nie stoi to w sprzeczności z wymaganiami klienta, budujemy strony w oparciu o Material Design.
