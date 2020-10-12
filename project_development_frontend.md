@@ -6,7 +6,7 @@
 1. Używamy stacku technologicznego opartego na Vue, Nuxt, Vuex i Vue-Router (wyjątkiem mogą być strony treściowe zarządzane przez CMS, dla których dopuszczalne jest użycie [Wagtaila](https://wagtail.io/)).
 1. Nie używamy <strike>jQuery</strike>. Nie. Nie ma mowy.
 2. Piszemy kod korzystający z funkcjonalności ECMAScript 2015+, który jest konwertowany na kod przyjazny dla przeglądarek przez [Babel](https://babeljs.io/). W szczególności korzystamy z podziału kodu na moduły.
-3. Przestrzegamy rekomendacji spisanych w opcjalnym [Style Guidzie Vue](https://vuejs.org/v2/style-guide/). Oznacza to między innymi stosowanie odpowiednich konwencji nazewnictwa:
+3. Przestrzegamy rekomendacji spisanych w oficjalnym [Style Guidzie Vue](https://vuejs.org/v2/style-guide/). Oznacza to między innymi stosowanie odpowiednich konwencji nazewnictwa:
     * Nazwy komponentów używają *PascalCase*
     * [Nazwy komponentów muszą być co najmniej dwuczłonowe](https://vuejs.org/v2/style-guide/#Multi-word-component-names-essential)
     * [Każdy komponent znajduje się w osobnym pliku](https://vuejs.org/v2/style-guide/#Single-file-component-filename-casing-strongly-recommended), [którego nazwa jest identyczna z nazwą komponentu (czyli też używa *PascalCase*)](https://vuejs.org/v2/style-guide/#Single-file-component-filename-casing-strongly-recommended)
@@ -14,7 +14,7 @@
     * [Komponenty prezentacyjne (takie które przyjmują dane przez `props` i wyświetlają je w określony sposób, bez wchodzenia w logikę biznesową) używają przedrostka `App`](https://vuejs.org/v2/style-guide/#Base-component-names-strongly-recommended)
     * [Komponenty które z samego swojego założenia pojawiają się w aplikacji tylko raz używają przedrosta `The`](https://vuejs.org/v2/style-guide/#Single-instance-component-names-strongly-recommended)
     * [Komponenty które z założenia powinny być wyświetlane jako dziecko konkretnego komponentu używają przedrostka z nazwą tego rodzica](https://vuejs.org/v2/style-guide/#Tightly-coupled-component-names-strongly-recommended)
-4. Staramy się jak najbardziej wykorzystywać konwencje i funkcjonalności przychodzę z Nuxt.js (np. [routing oparty na komponentach w katalogu `pages/`](https://nuxtjs.org/guide/routing)).
+4. Staramy się jak najbardziej wykorzystywać konwencje i funkcjonalności przychodzące z Nuxt.js (np. [routing oparty na komponentach w katalogu `pages/`](https://nuxtjs.org/guide/routing)).
 3. Dane aplikacji przechowujemy w Vuex. Powinny być one logicznie podzielone na wydzielone (`namespaced: true`) moduły, [podzielone na pliki zgodnie z konwencją Nuxt](https://nuxtjs.org/guide/modules). Kod operujący na tych danych (w tym pobierający je z zewnętrznego API) powinien znajdować się w akcjach (*actions*) odpowiedniego modułu.
 4. Korzystamy z Vue Single File Components (plików `.vue`). W szczególności wszystkie style specyficzne dla danego komponentu wizualnego powinny znajdować się wewnątrz jego pliku.
 5. Pisząc komponenty Vue, preferujemy kompozycję (osadzanie komponentów wewnątrz innych komponentów) ponad dziedziczenie (w tym używanie mixinów).
