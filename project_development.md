@@ -36,6 +36,9 @@ Wszystkie projekty programistyczne w Laboratorium EE powinny posiadać swoje rep
 ## Definition of Done
 Projekty powinny być rozwijane w sposób zgodny z firmowym [Definition of Done](https://eetools.laboratorium.ee/strony/dod/). Opcjonalnie projekty mogą opracowywać własne dokumenty DoD uszczegóławiające zasady ogólnofirmowe.
 
+## Komentarze w kodzie
+Wszystkie "hacki", rzeczy które na pierwszy rzut oka mogą wydawać się nieintuicyjne lub dziwne, których powód istnienia nie będzie jasny z samego przeczytania kodu, powinny być opisane odpowiednim komentarzem zamieszczonym bezpośrednio nad danym kodem. Komentarz powinien skupiać się nie na *co*, ale na *dlaczego* - czytający go programista powinien być w stanie zrozumiec motywacją stojącą za zastosowaniem danego nieintuicyjnego rozwiązania. Komentarze powinny być wyczerpujące - jeśli wytłumaczenie sytuacji która doprowadziłą do powstania kodu wymaga bardzo długiego opisu to taki opis powinien się tam znaleźć.
+
 ## Dobór i użycie technologii
 Staramy się standaryzować to jakich technologii używamy w firmie i w jaki sposób ich używamy. To znaczy że np. decyzja jakiej bazy SQL używamy na backendzie została podjęta na poziomie firmy i dotyczy wszystkich projektów. Chcemy w ten sposób ułatwić wykorzystywanie doświadczeń i narzędzi z projektów w innych projektach oraz ułatwić przechodzenie ludzi między projektami. Poza tym nie ma sensu by każdy projekt każdorazowo od nowa poświęcał czas na dyskutowanie i podejmowanie tych samych decyzji. 
 
