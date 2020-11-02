@@ -7,6 +7,7 @@
 2. Nowe projekty powinny zostać wygenerowane poprzez [generator projektów][generator-ee]
 3. Projekty powinny stosować się do [Coding Style projektu Django](https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/coding-style/). Oznacza to jednocześnie stosowanie się do zasad [PEP-8](https://www.python.org/dev/peps/pep-0008/) (wyjątkiem jest zgoda na linie do 119 znaków)
 4. Projekty powinny mieć skonfigurowane Continuus Integration (zazwyczaj CI od Heroku) skonfigurowane z linterem i odpalane automatycznie dla każdego pull requesta
+5. Jeśli projekt udostępnia web API, powinien również zawierać automatycznie generowaną do niego dokumentację.
 
 ## Standardowe komponenty
 Lista standardowych komponentów których używamy w projektach przy budowaniu backendu
