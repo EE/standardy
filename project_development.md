@@ -9,7 +9,7 @@ Kod powinien być kontrolowany przy pomocy linterów i formaterów:
 | Język           | Linter         | Formatter      | Wzorcowa konfiguracja
 | ----------------| ---------------|----------------| -----
 | Python          | [flake8]       | -              | [linter][flake8-conf]
-| Dart            | [dartanalyzer] | [dartanalyzer] | oparta o [pedantic]
+| Dart            | [dartanalyzer] | [dartanalyzer] | oparta o pakiet [lint][flutter-lint]
 | JavaScript (ES) | [eslint]       | [prettier]     | [linter][eslint-conf], [formatter][prettier-conf]
 | TypeScript      | [tslint]       | [prettier]     | [formatter][prettier-conf]
 | CSS / SCSS      | [stylelint]    | [prettier]     | [linter][stylelint-conf], [formatter][prettier-conf]
@@ -26,7 +26,7 @@ Kod powinien być kontrolowany przy pomocy linterów i formaterów:
 [stylelint]: https://stylelint.io/
 [stylelint-conf]: https://github.com/EE/generator-ee/blob/develop/%7B%7Bcookiecutter.project_slug%7D%7D/.stylelintrc
 [dartanalyzer]: https://dart.dev/tools/dartanalyzer
-[pedantic]: https://pub.dev/packages/pedantic#using-the-lints
+[flutter-lint]: https://pub.dev/packages/lint
 
 Programiści powinni ustawić w swoich edytorach automatyczne lintowanie i formattowanie przy pomocy narzędzi odpwiadających językom z którymi pracują. Instrukcje takiej konfiguracji znajdują się zazwyczaj w dokumentacji narzędzia i/lub edytora.
 
