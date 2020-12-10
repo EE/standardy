@@ -54,9 +54,10 @@
   
   Uwaga: na podlinkowanej stronie w menu nawigacyjnym po lewej znajduje się kilka sekcji. Chodzi konkretnie o sekcję "Material Guidelines". Pozostałe sekcje ("Material System", "Material Foundation") można co najwyżej przejrzeć.
 
-* Książka?
+* Książki?
 
-  Istnieje książka o nazwie ["Flutter in Action"](https://www.manning.com/books/flutter-in-action). Po przeczytaniu jej mam poczucie, że nie wnosi zbyt wiele w stosunku do materiałów wymienionych powyżej. Ale jeśli jesteś przywiązana_y do książkowej formy chętnie ją pożyczę [ja - Ludwik].
+  * Istnieje książka o nazwie ["Flutter in Action"](https://www.manning.com/books/flutter-in-action). Po przeczytaniu jej mam poczucie, że nie wnosi zbyt wiele w stosunku do materiałów wymienionych powyżej. Ale jeśli jesteś przywiązana_y do książkowej formy chętnie ją pożyczę [ja - Ludwik].
+  * Istnieje książka o nazwie ["Flutter Complete Reference"](https://fluttercompletereference.com/). Jest to ogromna cegła, ale jak sama nazwa wskazuje jest to "reference", czyli ma wrzucone wszystko po kolei, bez narracji, ciągu przyczynowo-skutkowego, czy specjalnego punktu widzenia. Nic wyjątkowego, ale jakby co też chętnie pożyczę [nadal ja - Ludwik].
 
 * [Flutter Weekly](https://flutterweekly.net/)
 
