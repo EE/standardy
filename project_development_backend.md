@@ -22,7 +22,6 @@ Lista standardowych komponentów których używamy w projektach przy budowaniu b
 | Klient HTTP                                 | [requests][requests]                                    |
 | CMS dla stron treściowych                   | [Wagtail][wagtail]                                      |
 | Prosty silnik wyszukiwania                  | [django.contrib.postgres.search][contrib]               | projekt wbudowane w Django
-| Kompilacja i minifikacja plików statycznych | [django-compressor][compressor]                         |
 | *Context processor* dla ustawień            | [django-settings-context-processor][settings-con-procs] |
 | Tłumaczenia treści                          | [django-modeltranslation][django-modeltranslation]      |
 | Edytor WYSIWYG                              | [django-ckeditor][django-ckeditor]                      |
@@ -40,7 +39,6 @@ Lista standardowych komponentów których używamy w projektach przy budowaniu b
 [flake8]: http://flake8.pycqa.org/en/latest/
 [contrib]: https://docs.djangoproject.com/en/dev/ref/contrib/postgres/search/
 [elastic]: https://www.elastic.co/products/elasticsearch
-[compressor]: https://github.com/django-compressor/django-compressor
 [settings-con-procs]: https://pypi.python.org/pypi/django-settings-context-processor/0.2
 [django-admin-sortable2]: https://github.com/jrief/django-admin-sortable2
 [django-modeltranslation]: https://github.com/deschler/django-modeltranslation
