@@ -7,11 +7,12 @@ O ile korzystanie z niżej wymienionych API nie jest zbyt problematyczne (chocia
 tak samo zebranie informacji o ich istnieniu i funkcjach okazało się być pewnym wyzwaniem dla osób nie zajmujących się tą tematyką na co dzień.
 Powodem użycia dwóch API (UUG i ULDK) w celu otrzymania wyczerpujących informacji o działce jest to, że każde z nich osobno nie dostarcza wszystkich informacji o wyszukiwanej działce.
 
-W projekcie zostały uwzlgędnione trzy ścieżki użytkownika:  
-1.) Użytkownik zna adres (miejscowość, ulica, numer budynku) danej działki i chce uzyskać o niej dokładne informacje (identyfikator, obręb ewidencyjny oraz numer działki ewidencyjnej)  
-2.) Użytkownik zna dokładny identyfikator działki lub numer obrębu i numer działki i chce uzyskać resztę informacji na jej temat (miejscowość, ulica, numer budynku)  
-3.) Użytkownik może znaleźć działkę poprzez kliknięcie na mapie.  
-Kolejnym, wspólnym krokiem, jest wyświetlenie ich na mapie.
+W projekcie zostały uwzlgędnione trzy ścieżki użytkownika:
+
+1. Użytkownik zna adres (miejscowość, ulica, numer budynku) danej działki i chce uzyskać o niej dokładne informacje (identyfikator, obręb ewidencyjny oraz numer działki ewidencyjnej)
+2. Użytkownik zna dokładny identyfikator działki lub numer obrębu i numer działki i chce uzyskać resztę informacji na jej temat (miejscowość, ulica, numer budynku)
+3. Użytkownik może znaleźć działkę poprzez kliknięcie na mapie.  
+   Kolejnym, wspólnym krokiem, jest wyświetlenie ich na mapie.
 
 Realizacja tych ścieżek jest możliwa dzięki użyciu API 3 serwisów obsługiwanych przez [GUGiK](http://www.gugik.gov.pl/).
 Są to:
@@ -22,10 +23,10 @@ Są to:
 
 Poniżej znajdziesz opis dwóch wcześniej wspomnianych ścieżek z dokładnym uwzględnieniem użytych API.
 
-## ścieżka nr. 1
+## Ścieżka nr. 1
 
 Chcąc zlokalizować działkę po adresie (miejscowość, ulica, numer budynku) w pierwszym kroku używamy serwisu UUG,
-który na podstawie danych adresowych zwraca nam listę dopasowanych działek według dostarczonych przez nas informacji.
+który na podstawie danych adresowych zwraca nam listę dopasowanych działek według dostarczonych przez nas informacji.  
 Przykładowe zapytanie:  
 `https://services.gugik.gov.pl/uug/?request=GetAddress&location=Warszawa%2C%20Stalowa%201`  
 Przykładowa odpowiedź:
@@ -65,7 +66,7 @@ Przykładowa odpowiedź:
 Zazwyczaj jest to jedna działka, jednak możliwa jest odpowiedź serwera zwracająca listę działek.
 Ze zwróconych z UUG informacji o adresie do użycia API ULDK potrzebujemy tylko współrzędnych X i Y znalezionego obiektu.
 W zapytaniu do ULDK, oprócz wspórzędnych X i Y, podajemy listę parametrów, które określają strukturę informacji, jakie chcemy uzyskać w odpowiedzi (czyli np `result=id,numer,powiat,gmina,geom_wkt,`).  
-Przykładowe zapytanie, na podstawie poprzedniego zapytania:
+Przykładowe zapytanie, na podstawie poprzedniego zapytania:  
 `https://uldk.gugik.gov.pl/?request=GetParcelByXY&xy=638901.1258,489996.4866&result=id,numer,powiat,gmina,geom_wkt,voivodeship,teryt,region,parcel,jednostka_ewidencyjna&srid=4326`  
 Odpowiedź:
 
@@ -76,10 +77,10 @@ Odpowiedź:
 
 W odpowiedzi z ULDK otrzymujemy resztę interesujących nas informacji, takie jak powiat, gmina, województwo, identyfikator działki, obręb ewidencyjny, jednostka ewidecyjna oraz geometrię obiektu, dzięki której możemy wyrenderować odpowiedni kształ na mapie.
 
-## ścieżka nr. 2
+## Ścieżka nr. 2
 
 Chcąc zlokalizować działkę po znanym identyfikatorze lub numerze obrębu i numerze działki, używamy na początku serwisu ULDK, któremu przekazujemy tylko identyfikator działki (w tym wypadku to `146508_8.1304.60`),
-a w odpowiedzi dostajemy powiat, gmina, województwo, identyfikator działki, obręb ewidencyjny, jednostka ewidecyjna oraz geometrię obiektu, dzięki której możemy wyrenderować odpowiedni kształ na mapie.
+a w odpowiedzi dostajemy powiat, gmina, województwo, identyfikator działki, obręb ewidencyjny, jednostka ewidecyjna oraz geometrię obiektu, dzięki której możemy wyrenderować odpowiedni kształ na mapie.  
 Przykładowe zapytanie:  
 `https://uldk.gugik.gov.pl/?request=GetParcelByIdOrNr&id=146508_8.1304.60&result=id,numer,powiat,gmina,geom_wkt,voivodeship,teryt,region,parcel,jednostka_ewidencyjna&srid=4326`  
 Przykładowa odpowiedź:
@@ -90,8 +91,12 @@ Przykładowa odpowiedź:
 ```
 
 Następnie kierujemy zapytanie do UUG używając tylko geometrii otrzymanej z poprzedniej odpowiedzi (używając parametru `request=GetAddressReverse`).  
-Przykładowe zapytanie:  
-`https://services.gugik.gov.pl/uug/?request=GetAddressReverse&location=POLYGON((21.0354452630117%2052.2584525918487,21.0355334926599%2052.2585261742515,21.0355661733376%2052.2585503412127,21.0356267871804%2052.2585228207044,21.0356319082129%2052.258516348045,21.0356225299489%2052.2585105987735,21.0356503477517%2052.2584978279027,21.0357953834715%2052.2585438008329,21.0358040409553%2052.2585638406859,21.0358371368578%2052.2585578089143,21.035890755559%2052.2585739704128,21.0358925097842%2052.2585698355567,21.0359706464214%2052.2584772388975,21.0355790504327%2052.2583526987239,21.0354452630117%2052.2584525918487))&srid=4326`
+Przykładowe zapytanie:
+
+```
+https://services.gugik.gov.pl/uug/?request=GetAddressReverse&location=POLYGON((21.0354452630117%2052.2584525918487,21.0355334926599%2052.2585261742515,21.0355661733376%2052.2585503412127,21.0356267871804%2052.2585228207044,21.0356319082129%2052.258516348045,21.0356225299489%2052.2585105987735,21.0356503477517%2052.2584978279027,21.0357953834715%2052.2585438008329,21.0358040409553%2052.2585638406859,21.0358371368578%2052.2585578089143,21.035890755559%2052.2585739704128,21.0358925097842%2052.2585698355567,21.0359706464214%2052.2584772388975,21.0355790504327%2052.2583526987239,21.0354452630117%2052.2584525918487))&srid=4326
+```
+
 Przykładowa odpowiedź:
 
 ```
@@ -133,7 +138,7 @@ Przykładowa odpowiedź:
 146508_8.1304.60|60|Warszawa|Warszawa|SRID=4326;POLYGON((21.0354452630117 52.2584525918487,21.0355334926599 52.2585261742515,21.0355661733376 52.2585503412127,21.0356267871804 52.2585228207044,21.0356319082129 52.258516348045,21.0356225299489 52.2585105987735,21.0356503477517 52.2584978279027,21.0357953834715 52.2585438008329,21.0358040409553 52.2585638406859,21.0358371368578 52.2585578089143,21.035890755559 52.2585739704128,21.0358925097842 52.2585698355567,21.0359706464214 52.2584772388975,21.0355790504327 52.2583526987239,21.0354452630117 52.2584525918487))|Mazowieckie|146508_8.1304.60|4-13-04|60|Praga-Północ
 ```
 
-## ścieżka nr. 3
+## Ścieżka nr. 3
 
 Działki można też lokalizować poprzez kliknięcie w punkt na mapie.
 W tym wypadku najpierw odpytujemy ULDK:  
@@ -146,7 +151,7 @@ Odpowiedź:
 ```
 
 a następnie na podstawie otrzymanej informacji o geometrii UUG:  
-`https://services.gugik.gov.pl/uug/?request=GetAddressReverse&location=POINT(21.036533117294315%2052.2586558021617)&srid=4326`
+`https://services.gugik.gov.pl/uug/?request=GetAddressReverse&location=POINT(21.036533117294315%2052.2586558021617)&srid=4326`  
 Odpowiedź:
 
 ```
@@ -180,7 +185,7 @@ Odpowiedź:
 
 ## Generowanie mapy
 
-Po pobraniu wszytkich informacji jesteśmy gotowi do wyświetlenia tych danych na mapie przy pomocy serwisu KIEG.
+Po pobraniu wszytkich informacji jesteśmy gotowi do wyświetlenia tych danych na mapie przy pomocy serwisu KIEG.  
 Poniżej znajduje się przykładowy kod, który używając biblioteki leaflet wyświetla mapę Polski wraz z nałożoną siatką działek (w elemencie o id `js-interactive-map-container`).
 
 ```
