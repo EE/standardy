@@ -1,10 +1,10 @@
 # Instrukcja wyszukiwania i wyświetlania działek katastralnych na mapach Open Street Maps
 
-W tej instrukcji znajdziesz opisane sposoby, dzięki którym możesz pobrać dane działek katastralnych (działka katastralna to najmniejsza jednostka powierzchniowa podziału kraju dla celów ewidencji gruntów i budynków) na terenie Polski i wyświetlić je (na przykład) na mapie [Open Street Map](https://www.openstreetmap.org/#map=6/52.018/19.137) przy użyciu biblioteki [Leaflet](https://leafletjs.com/).
-Przykładową implementację znajdziesz w projekcie GUNB.
-Głównym założeniem tego dokumentu jest zebranie w jednym miejscu informacji o API użytych do stworzenia tych funkcjonalności.
+W tej instrukcji znajdziesz opisane sposoby, dzięki którym możesz pobrać dane działek katastralnych (działka katastralna to najmniejsza jednostka powierzchniowa podziału kraju dla celów ewidencji gruntów i budynków) na terenie Polski i wyświetlić je (na przykład) na mapie [Open Street Map](https://www.openstreetmap.org/#map=6/52.018/19.137) przy użyciu biblioteki [Leaflet](https://leafletjs.com/).  
+Przykładową implementację znajdziesz w projekcie GUNB.  
+Głównym założeniem tego dokumentu jest zebranie w jednym miejscu informacji o API użytych do stworzenia tych funkcjonalności.  
 O ile korzystanie z niżej wymienionych API nie jest zbyt problematyczne (chociaż ich dokumentacja na pierwszy rzut oka wydaje się być mało przyjazna),
-tak samo zebranie informacji o ich istnieniu i funkcjach okazało się być pewnym wyzwaniem dla osób nie zajmujących się tą tematyką na co dzień.
+tak samo zebranie informacji o ich istnieniu i funkcjach okazało się być pewnym wyzwaniem dla osób nie zajmujących się tą tematyką na co dzień.  
 Powodem użycia dwóch API (UUG i ULDK) w celu otrzymania wyczerpujących informacji o działce jest to, że każde z nich osobno nie dostarcza wszystkich informacji o wyszukiwanej działce.
 
 W projekcie zostały uwzlgędnione trzy ścieżki użytkownika:
