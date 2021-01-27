@@ -15,7 +15,8 @@ W projekcie zostały uwzlgędnione trzy ścieżki użytkownika:
 
 1. Użytkownik zna adres (miejscowość, ulica, numer budynku) danej działki i chce uzyskać o niej dokładne informacje (identyfikator, obręb ewidencyjny oraz numer działki ewidencyjnej)
 2. Użytkownik zna dokładny identyfikator działki lub numer obrębu i numer działki i chce uzyskać resztę informacji na jej temat (miejscowość, ulica, numer budynku)
-3. Użytkownik może znaleźć działkę poprzez kliknięcie na mapie.  
+3. Użytkownik może znaleźć działkę poprzez kliknięcie na mapie.
+
    Kolejnym, wspólnym krokiem, jest wyświetlenie ich na mapie.
 
 Realizacja tych ścieżek jest możliwa dzięki użyciu API trzech serwisów obsługiwanych przez [GUGiK](http://www.gugik.gov.pl/).
