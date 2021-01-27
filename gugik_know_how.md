@@ -259,3 +259,12 @@ Wyświetlanie działki na mapie polega na dodaniu do niej polygonu o geometrii, 
 - Wyżej wymienione API bywają niestabilne (odpowiedzi czasami przychodzą po > 15s).
 - Warto zwrócić uwagę, że geometria `POINT(21.036533117294315 52.2586558021617)` ma parametry rozdzielone spacją a nie przecinkiem.
 - Warto zwrócić uwagę, że lista działek otrzymywana z UUG jest obiektem (`results`) a nie tablicą, a kolejne działki znajdują sie pod kluczami `"1"`, `"2"`, itd.
+- Warto zwrócić uwagę, że w zapytaniach używających koordynatów `X` i `Y` należy przekonwertować współrzędne ze standardu `EPSG:4326` do standaru `EPSG:2180` (można to zrobić np. za pomocą biblioteki [proj4](https://github.com/proj4js/proj4js)),  
+  definicja `EPSG:2180`:
+
+```js
+proj4.defs(
+  "EPSG:2180",
+  "+proj=tmerc +lat_0=0 +lon_0=19 +k=0.9993 +x_0=500000 +y_0=-5300000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs"
+);
+```
