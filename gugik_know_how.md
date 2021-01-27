@@ -14,7 +14,7 @@ W projekcie zostały uwzlgędnione trzy ścieżki użytkownika:
 3. Użytkownik może znaleźć działkę poprzez kliknięcie na mapie.  
    Kolejnym, wspólnym krokiem, jest wyświetlenie ich na mapie.
 
-Realizacja tych ścieżek jest możliwa dzięki użyciu API 3 serwisów obsługiwanych przez [GUGiK](http://www.gugik.gov.pl/).
+Realizacja tych ścieżek jest możliwa dzięki użyciu API trzech serwisów obsługiwanych przez [GUGiK](http://www.gugik.gov.pl/).
 Są to:
 
 - [Usługa Lokalizacji Działek Katastralnych](https://uldk.gugik.gov.pl/) (dalej ULDK) ([dokumentacja](https://uldk.gugik.gov.pl/opis.html))
@@ -140,7 +140,7 @@ Przykładowa odpowiedź:
 ```
 
 Z danego requestu dostajemy informacje o miejscowości, kodzie pocztowym, numerze budynku.
-W analogiczny sposób kierujemy zapytanie, jeśli chcemy wyszukać działkę po numerze obrębu połączonego z numerem działki  
+W analogiczny sposób kierujemy zapytanie, jeśli chcemy wyszukać działkę po numerze obrębu (tutaj `4-13-04`) połączonego z numerem działki (tutaj `60`).  
 Przykładowe zapytanie:
 
 ```
@@ -248,3 +248,8 @@ map.setMinZoom(7);
 ```
 
 Wyświetlanie działki na mapie polega na dodaniu do niej polygonu o geometrii, którą dostajemy w zapytaniach do API.
+
+## uwagi końcowe
+
+- Wyżej wymienione API bywają niestabilne (odpowiedzi czasami przychodzą po > 15s).
+- Warto zwrócić uwagę, że geometria `POINT(21.036533117294315 52.2586558021617)` rozdziela parametry spacją z nie przecinkiem.
