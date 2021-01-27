@@ -7,7 +7,8 @@ Przykładową implementację znajdziesz w projekcie GUNB.
 Głównym założeniem tego dokumentu jest zebranie w jednym miejscu informacji o API użytych do stworzenia tych funkcjonalności.
 
 O ile korzystanie z niżej wymienionych API nie jest zbyt problematyczne (chociaż ich dokumentacja na pierwszy rzut oka wydaje się być mało przyjazna),
-tak samo zebranie informacji o ich istnieniu i funkcjach okazało się być pewnym wyzwaniem dla osób nie zajmujących się tą tematyką na co dzień.  
+tak samo zebranie informacji o ich istnieniu i funkcjach, okazało się być pewnym wyzwaniem dla osób nie zajmujących się tą tematyką na co dzień.
+
 Powodem użycia dwóch API (UUG i ULDK) w celu otrzymania wyczerpujących informacji o działce jest to, że każde z nich osobno nie dostarcza wszystkich informacji o wyszukiwanej działce.
 
 W projekcie zostały uwzlgędnione trzy ścieżki użytkownika:
