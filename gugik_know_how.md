@@ -9,10 +9,10 @@ Powodem użycia dwóch API (UUG i ULDK) w celu otrzymania wyczerpujących inform
 
 W projekcie zostały uwzlgędnione trzy ścieżki użytkownika:
 
-[1. Użytkownik zna adres (miejscowość, ulica, numer budynku) danej działki i chce uzyskać o niej dokładne informacje (identyfikator, obręb ewidencyjny oraz numer działki ewidencyjnej)][1]
-[2. Użytkownik zna dokładny identyfikator działki lub numer obrębu i numer działki i chce uzyskać resztę informacji na jej temat (miejscowość, ulica, numer budynku)][2]
-[3. Użytkownik może znaleźć działkę poprzez kliknięcie na mapie.][3]
-Kolejnym, wspólnym krokiem, jest wyświetlenie ich na mapie.
+1. Użytkownik zna adres (miejscowość, ulica, numer budynku) danej działki i chce uzyskać o niej dokładne informacje (identyfikator, obręb ewidencyjny oraz numer działki ewidencyjnej)
+2. Użytkownik zna dokładny identyfikator działki lub numer obrębu i numer działki i chce uzyskać resztę informacji na jej temat (miejscowość, ulica, numer budynku)
+3. Użytkownik może znaleźć działkę poprzez kliknięcie na mapie.
+   Kolejnym, wspólnym krokiem, jest wyświetlenie ich na mapie.
 
 Realizacja tych ścieżek jest możliwa dzięki użyciu API 3 serwisów obsługiwanych przez [GUGiK](http://www.gugik.gov.pl/).
 Są to:
@@ -23,7 +23,7 @@ Są to:
 
 Poniżej znajdziesz opis dwóch wcześniej wspomnianych ścieżek z dokładnym uwzględnieniem użytych API.
 
-## [1]: Ścieżka nr. 1
+## Ścieżka nr. 1
 
 Chcąc zlokalizować działkę po adresie (miejscowość, ulica, numer budynku) w pierwszym kroku używamy serwisu UUG,
 który na podstawie danych adresowych zwraca nam listę dopasowanych działek według dostarczonych przez nas informacji.  
@@ -35,35 +35,35 @@ https://services.gugik.gov.pl/uug/?request=GetAddress&location=Warszawa%2C%20Sta
 
 Przykładowa odpowiedź:
 
-```
+```json
 {
-  type: "address",
+  "type": "address",
   "max results limit": 10,
   "min accuracy limit": 0.6,
   "only exact numbers": 1,
   "found objects": 10,
   "returned objects": 1,
-  results: {
-    1: {
-      city: "Warszawa",
-      citypart: null,
-      street: "ulica Stalowa",
-      number: "1",
-      teryt: "146501",
-      simc: "0918123",
-      ulic: "20808",
-      code: "03-425",
-      jednostka: "{Polska,mazowieckie,Warszawa,Warszawa}",
-      x: "638901.1258",
-      y: "489996.4866",
-      geometry_wkt: "POINT(638901.1258 489996.4866)",
-      accuracy: "0.75",
-      city_accuracy: "1",
-      street_accuracy: "0.571429",
-      id: 1,
-    },
+  "results": {
+    "1": {
+      "city": "Warszawa",
+      "citypart": null,
+      "street": "ulica Stalowa",
+      "number": "1",
+      "teryt": "146501",
+      "simc": "0918123",
+      "ulic": "20808",
+      "code": "03-425",
+      "jednostka": "{Polska,mazowieckie,Warszawa,Warszawa}",
+      "x": "638901.1258",
+      "y": "489996.4866",
+      "geometry_wkt": "POINT(638901.1258 489996.4866)",
+      "accuracy": "0.75",
+      "city_accuracy": "1",
+      "street_accuracy": "0.571429",
+      "id": 1
+    }
   },
-  "request time": 0.070067417621613,
+  "request time": 0.070067417621613
 }
 ```
 
@@ -85,7 +85,7 @@ Odpowiedź:
 
 W odpowiedzi z ULDK otrzymujemy resztę interesujących nas informacji, takie jak powiat, gmina, województwo, identyfikator działki, obręb ewidencyjny, jednostka ewidecyjna oraz geometrię obiektu, dzięki której możemy wyrenderować odpowiedni kształ na mapie.
 
-## [2]: Ścieżka nr. 2
+## Ścieżka nr. 2
 
 Chcąc zlokalizować działkę po znanym identyfikatorze lub numerze obrębu i numerze działki, używamy na początku serwisu ULDK, któremu przekazujemy tylko identyfikator działki (w tym wypadku to `146508_8.1304.60`),
 a w odpowiedzi dostajemy powiat, gmina, województwo, identyfikator działki, obręb ewidencyjny, jednostka ewidecyjna oraz geometrię obiektu, dzięki której możemy wyrenderować odpowiedni kształ na mapie.  
@@ -111,31 +111,31 @@ https://services.gugik.gov.pl/uug/?request=GetAddressReverse&location=POLYGON((2
 
 Przykładowa odpowiedź:
 
-```
+```json
 {
-  type: "address",
+  "type": "address",
   "max results limit": 100,
-  radius: null,
+  "radius": null,
   "max polygon area": 1000000,
   "returned objects": 1,
-  results: {
-    1: {
-      city: "Warszawa",
-      citypart: null,
-      street: "ulica Stalowa",
-      number: "1",
-      teryt: "146501",
-      simc: "0918123",
-      ulic: "20808",
-      code: "03-425",
-      jednostka: "{Polska,mazowieckie,Warszawa,Warszawa}",
-      x: "21.0357645511821",
-      y: "52.2584321119428",
-      geometry_wkt: "POINT(21.0357645511821 52.2584321119428)",
-      id: 1,
-    },
+  "results": {
+    "1": {
+      "city": "Warszawa",
+      "citypart": null,
+      "street": "ulica Stalowa",
+      "number": "1",
+      "teryt": "146501",
+      "simc": "0918123",
+      "ulic": "20808",
+      "code": "03-425",
+      "jednostka": "{Polska,mazowieckie,Warszawa,Warszawa}",
+      "x": "21.0357645511821",
+      "y": "52.2584321119428",
+      "geometry_wkt": "POINT(21.0357645511821 52.2584321119428)",
+      "id": 1
+    }
   },
-  "request time": 0.0013017813364665,
+  "request time": 0.0013017813364665
 }
 ```
 
@@ -154,7 +154,7 @@ Przykładowa odpowiedź:
 146508_8.1304.60|60|Warszawa|Warszawa|SRID=4326;POLYGON((21.0354452630117 52.2584525918487,21.0355334926599 52.2585261742515,21.0355661733376 52.2585503412127,21.0356267871804 52.2585228207044,21.0356319082129 52.258516348045,21.0356225299489 52.2585105987735,21.0356503477517 52.2584978279027,21.0357953834715 52.2585438008329,21.0358040409553 52.2585638406859,21.0358371368578 52.2585578089143,21.035890755559 52.2585739704128,21.0358925097842 52.2585698355567,21.0359706464214 52.2584772388975,21.0355790504327 52.2583526987239,21.0354452630117 52.2584525918487))|Mazowieckie|146508_8.1304.60|4-13-04|60|Praga-Północ
 ```
 
-## [3]: Ścieżka nr. 3
+## Ścieżka nr. 3
 
 Działki można też lokalizować poprzez kliknięcie w punkt na mapie.
 W tym wypadku najpierw odpytujemy ULDK:
@@ -178,32 +178,32 @@ https://services.gugik.gov.pl/uug/?request=GetAddressReverse&location=POINT(21.0
 
 Odpowiedź:
 
-```
+```json
 {
-  type: "address",
+  "type": "address",
   "max results limit": 1,
-  radius: 100,
+  "radius": 100,
   "max polygon area": null,
   "returned objects": 1,
-  results: {
-    1: {
-      city: "Warszawa",
-      citypart: null,
-      street: "ulica Stalowa",
-      number: "5",
-      teryt: "146501",
-      simc: "0918123",
-      ulic: "20808",
-      code: "03-425",
-      jednostka: "{Polska,mazowieckie,Warszawa,Warszawa}",
-      x: "21.0363722492803",
-      y: "52.2586220504341",
-      geometry_wkt: "POINT(21.0363722492803 52.2586220504341)",
-      distance: "11.603237731433",
-      id: 1,
-    },
+  "results": {
+    "1": {
+      "city": "Warszawa",
+      "citypart": null,
+      "street": "ulica Stalowa",
+      "number": "5",
+      "teryt": "146501",
+      "simc": "0918123",
+      "ulic": "20808",
+      "code": "03-425",
+      "jednostka": "{Polska,mazowieckie,Warszawa,Warszawa}",
+      "x": "21.0363722492803",
+      "y": "52.2586220504341",
+      "geometry_wkt": "POINT(21.0363722492803 52.2586220504341)",
+      "distance": "11.603237731433",
+      "id": 1
+    }
   },
-  "request time": 0.0010969519615173,
+  "request time": 0.0010969519615173
 }
 ```
 
@@ -212,40 +212,39 @@ Odpowiedź:
 Po pobraniu wszytkich informacji jesteśmy gotowi do wyświetlenia tych danych na mapie przy pomocy serwisu KIEG.  
 Poniżej znajduje się przykładowy kod, który używając biblioteki leaflet wyświetla mapę Polski wraz z nałożoną siatką działek (w elemencie o id `js-interactive-map-container`).
 
-```
-  const map = leaflet.map("js-interactive-map-container").setView([52, 19], 6);
-  leaflet
-    .tileLayer(
-      "https://mapy.geoportal.gov.pl/wss/ext/OSM/BaseMap/tms/1.0.0/osm_3857/GLOBAL_WEBMERCATOR/{z}/{x}/{y}.png",
-      {
-        tms: true,
-        zoomOffset: -1,
-        attribution:
-          '&copy; <a href="https://osm.org/copyright">OpenStreetMap</a> contributors',
-      },
-    )
-    .addTo(map);
+```js
+const map = leaflet.map("js-interactive-map-container").setView([52, 19], 6);
+leaflet
+  .tileLayer(
+    "https://mapy.geoportal.gov.pl/wss/ext/OSM/BaseMap/tms/1.0.0/osm_3857/GLOBAL_WEBMERCATOR/{z}/{x}/{y}.png",
+    {
+      tms: true,
+      zoomOffset: -1,
+      attribution:
+        '&copy; <a href="https://osm.org/copyright">OpenStreetMap</a> contributors',
+    }
+  )
+  .addTo(map);
 
-  leaflet.tileLayer
-    .wms(
-      "https://integracja.gugik.gov.pl/cgi-bin/KrajowaIntegracjaEwidencjiGruntow",
-      {
-        layers: "geoportal,dzialki,numery_dzialek,budynki",
-        format: "image/png",
-        transparent: true,
-      },
-    )
-    .addTo(map);
+leaflet.tileLayer
+  .wms(
+    "https://integracja.gugik.gov.pl/cgi-bin/KrajowaIntegracjaEwidencjiGruntow",
+    {
+      layers: "geoportal,dzialki,numery_dzialek,budynki",
+      format: "image/png",
+      transparent: true,
+    }
+  )
+  .addTo(map);
 
-  map.zoomControl.setPosition("bottomleft");
+map.zoomControl.setPosition("bottomleft");
 
-  map.setMaxBounds([
-    [55.2223, 13.717078],
-    [48.904122, 24.584035],
-  ]);
+map.setMaxBounds([
+  [55.2223, 13.717078],
+  [48.904122, 24.584035],
+]);
 
-  map.setMinZoom(7);
-
+map.setMinZoom(7);
 ```
 
 Wyświetlanie działki na mapie polega na dodaniu do niej polygonu o geometrii, którą dostajemy w zapytaniach do API.
