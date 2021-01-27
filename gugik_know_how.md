@@ -26,7 +26,7 @@ Są to:
 - [Uniwersalna Usługa Geokodowania](https://services.gugik.gov.pl/uug) (dalej UUG) ([dokumentacja](https://services.gugik.gov.pl/uug/opis.html))
 - [Krajowa Integracja Ewidencji Gruntów](https://integracja.gugik.gov.pl/cgi-bin/KrajowaIntegracjaEwidencjiGruntow) (dalej KIEG) ([dokumentacja](https://integracja.gugik.gov.pl/cgi-bin/KrajowaIntegracjaEwidencjiGruntow))
 
-Poniżej znajdziesz opis dwóch wcześniej wspomnianych ścieżek z dokładnym uwzględnieniem użytych API.
+Poniżej znajdziesz opis trzech wcześniej wspomnianych ścieżek z dokładnym uwzględnieniem użytych API.
 
 ## Ścieżka nr. 1
 
@@ -258,3 +258,4 @@ Wyświetlanie działki na mapie polega na dodaniu do niej polygonu o geometrii, 
 
 - Wyżej wymienione API bywają niestabilne (odpowiedzi czasami przychodzą po > 15s).
 - Warto zwrócić uwagę, że geometria `POINT(21.036533117294315 52.2586558021617)` ma parametry rozdzielone spacją a nie przecinkiem.
+- Warto zwrócić uwagę, że lista działek otrzymywana z UUG jest obiektem (`results`) a nie tablicą, a kolejne działki znajdują sie pod kluczami `"1"`, `"2"`, itd.
