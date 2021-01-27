@@ -252,4 +252,4 @@ Wyświetlanie działki na mapie polega na dodaniu do niej polygonu o geometrii, 
 ## uwagi końcowe
 
 - Wyżej wymienione API bywają niestabilne (odpowiedzi czasami przychodzą po > 15s).
-- Warto zwrócić uwagę, że geometria `POINT(21.036533117294315 52.2586558021617)` rozdziela parametry spacją z nie przecinkiem.
+- Warto zwrócić uwagę, że geometria `POINT(21.036533117294315 52.2586558021617)` ma parametry rozdzielone spacją a nie przecinkiem.
