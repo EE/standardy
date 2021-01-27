@@ -27,8 +27,12 @@ Poniżej znajdziesz opis dwóch wcześniej wspomnianych ścieżek z dokładnym u
 
 Chcąc zlokalizować działkę po adresie (miejscowość, ulica, numer budynku) w pierwszym kroku używamy serwisu UUG,
 który na podstawie danych adresowych zwraca nam listę dopasowanych działek według dostarczonych przez nas informacji.  
-Przykładowe zapytanie:  
-`https://services.gugik.gov.pl/uug/?request=GetAddress&location=Warszawa%2C%20Stalowa%201`  
+Przykładowe zapytanie:
+
+```
+https://services.gugik.gov.pl/uug/?request=GetAddress&location=Warszawa%2C%20Stalowa%201
+```
+
 Przykładowa odpowiedź:
 
 ```
@@ -66,8 +70,12 @@ Przykładowa odpowiedź:
 Zazwyczaj jest to jedna działka, jednak możliwa jest odpowiedź serwera zwracająca listę działek.
 Ze zwróconych z UUG informacji o adresie do użycia API ULDK potrzebujemy tylko współrzędnych X i Y znalezionego obiektu.
 W zapytaniu do ULDK, oprócz wspórzędnych X i Y, podajemy listę parametrów, które określają strukturę informacji, jakie chcemy uzyskać w odpowiedzi (czyli np `result=id,numer,powiat,gmina,geom_wkt,`).  
-Przykładowe zapytanie, na podstawie poprzedniego zapytania:  
-`https://uldk.gugik.gov.pl/?request=GetParcelByXY&xy=638901.1258,489996.4866&result=id,numer,powiat,gmina,geom_wkt,voivodeship,teryt,region,parcel,jednostka_ewidencyjna&srid=4326`  
+Przykładowe zapytanie, na podstawie poprzedniego zapytania:
+
+```
+https://uldk.gugik.gov.pl/?request=GetParcelByXY&xy=638901.1258,489996.4866&result=id,numer,powiat,gmina,geom_wkt,voivodeship,teryt,region,parcel,jednostka_ewidencyjna&srid=4326
+```
+
 Odpowiedź:
 
 ```
@@ -81,8 +89,12 @@ W odpowiedzi z ULDK otrzymujemy resztę interesujących nas informacji, takie ja
 
 Chcąc zlokalizować działkę po znanym identyfikatorze lub numerze obrębu i numerze działki, używamy na początku serwisu ULDK, któremu przekazujemy tylko identyfikator działki (w tym wypadku to `146508_8.1304.60`),
 a w odpowiedzi dostajemy powiat, gmina, województwo, identyfikator działki, obręb ewidencyjny, jednostka ewidecyjna oraz geometrię obiektu, dzięki której możemy wyrenderować odpowiedni kształ na mapie.  
-Przykładowe zapytanie:  
-`https://uldk.gugik.gov.pl/?request=GetParcelByIdOrNr&id=146508_8.1304.60&result=id,numer,powiat,gmina,geom_wkt,voivodeship,teryt,region,parcel,jednostka_ewidencyjna&srid=4326`  
+Przykładowe zapytanie:
+
+```
+https://uldk.gugik.gov.pl/?request=GetParcelByIdOrNr&id=146508_8.1304.60&result=id,numer,powiat,gmina,geom_wkt,voivodeship,teryt,region,parcel,jednostka_ewidencyjna&srid=4326
+```
+
 Przykładowa odpowiedź:
 
 ```
@@ -129,8 +141,12 @@ Przykładowa odpowiedź:
 
 Z danego requestu dostajemy informacje o miejscowości, kodzie pocztowym, numerze budynku.
 W analogiczny sposób kierujemy zapytanie, jeśli chcemy wyszukać działkę po numerze obrębu połączonego z numerem działki  
-Przykładowe zapytanie:  
-`https://uldk.gugik.gov.pl/?request=GetParcelByIdOrNr&id=4-13-04%2060&result=id,numer,powiat,gmina,geom_wkt,voivodeship,teryt,region,parcel,jednostka_ewidencyjna&srid=4326`
+Przykładowe zapytanie:
+
+```
+https://uldk.gugik.gov.pl/?request=GetParcelByIdOrNr&id=4-13-04%2060&result=id,numer,powiat,gmina,geom_wkt,voivodeship,teryt,region,parcel,jednostka_ewidencyjna&srid=4326
+```
+
 Przykładowa odpowiedź:
 
 ```
@@ -141,8 +157,12 @@ Przykładowa odpowiedź:
 ## Ścieżka nr. 3
 
 Działki można też lokalizować poprzez kliknięcie w punkt na mapie.
-W tym wypadku najpierw odpytujemy ULDK:  
-`https://uldk.gugik.gov.pl/?request=GetParcelByXY&xy=638952.8605770653,490022.82990579586&result=id,numer,powiat,gmina,geom_wkt,voivodeship,teryt,region,parcel,jednostka_ewidencyjna&srid=4326`
+W tym wypadku najpierw odpytujemy ULDK:
+
+```
+https://uldk.gugik.gov.pl/?request=GetParcelByXY&xy=638952.8605770653,490022.82990579586&result=id,numer,powiat,gmina,geom_wkt,voivodeship,teryt,region,parcel,jednostka_ewidencyjna&srid=4326
+```
+
 Odpowiedź:
 
 ```
@@ -150,8 +170,12 @@ Odpowiedź:
 146508_8.1304.52|52|Warszawa|Warszawa|SRID=4326;POLYGON((21.0364366289483 52.2587570615703,21.0364840946195 52.2587707980298,21.0364810241808 52.2587772700923,21.0364854203202 52.2587799650313,21.0368522600284 52.2588923765819,21.036943564623 52.2587848556609,21.0365263258267 52.2586527770226,21.0364366289483 52.2587570615703))|Mazowieckie|146508_8.1304.52|4-13-04|52|Praga-Północ
 ```
 
-a następnie na podstawie otrzymanej informacji o geometrii UUG:  
-`https://services.gugik.gov.pl/uug/?request=GetAddressReverse&location=POINT(21.036533117294315%2052.2586558021617)&srid=4326`  
+a następnie na podstawie otrzymanej informacji o geometrii UUG:
+
+```
+https://services.gugik.gov.pl/uug/?request=GetAddressReverse&location=POINT(21.036533117294315%2052.2586558021617)&srid=4326
+```
+
 Odpowiedź:
 
 ```
