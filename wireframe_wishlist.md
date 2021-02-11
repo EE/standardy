@@ -1,6 +1,6 @@
 # Potrzeby programistów względem makiet / projektów graficznych
 
-*Ten dokument opisuje jak według naszego zespołu programistów frontendowych jakie cechy powinien mieć projekt graficzny lub makieta żeby mógł być szybko i bezproblemowo wdrożony w życie. Dokument nie jest zbiorem twardych wymogów, a raczej podstawą do ustaleń w danym projekcie - warto się na nim oprzeć, ale dopuszczalne jest ustalenie z góry że w danym projekcie wybrane (konkretne) cechy nie zostaną spełnione (na przykład ze względu na koszt lub specyfikę projektu).*
+*Ten dokument opisuje jakie cechy według naszego zespołu programistów frontendowych powinien mieć projekt graficzny lub makieta żeby mógł być szybko i bezproblemowo wdrożony w życie. Dokument nie jest zbiorem twardych wymogów, a raczej podstawą do ustaleń w danym projekcie - warto się na nim oprzeć, ale dopuszczalne jest ustalenie z góry że w danym projekcie wybrane (konkretne) cechy nie zostaną spełnione (na przykład ze względu na koszt lub specyfikę projektu).*
 
 
 1. Projekt zawierający przynajmniej widok desktopowy (1360 px) i mobilny (375 px), a także przewidzenie jak zachowuje się strona dla szerszych ekranów (np. określenie że w linii mieści się odpowiednio więcej elementów lub że elementy stają się proporcjonalnie szersze lub że elementy zostają bez zmian z marginesami po bokach). Mile widziany dodatkowo projekt na tablety.
