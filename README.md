@@ -13,6 +13,7 @@ Dokumenty były tworzone z myślą o użytku wewnętrznym w Laboratorium, ale ud
 - [Zasady (i poradnik) pracy z gitem](gitflow.md)
 - [Checklista przy uruchamianiu projektów na produkcji](launch_checklist.md)
 - [Checklista konfiguracji repozytoriów](new_repo_checklist.md)
+- [Potrzeby programistów względem makiet / projektów graficznych](https://github.com/EE/standardy/blob/master/wireframe_wishlist.md)
 
 ## Porady
 
