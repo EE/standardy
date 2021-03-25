@@ -6,4 +6,4 @@
   * *Require pull request reviews before merging*
   * *Dismiss stale pull request approvals when new commits are pushed*
   * *Require status checks to pass before merging*
-4. Wszystkie gałęzie z których automatycznie deployowane są środowiska produkcyjne (m.in. `master`) muszą mieć zaznaczone zaznaczone *include administrators*.
+4. Wszystkie gałęzie z których automatycznie deployowane są środowiska produkcyjne (m.in. `master`) muszą mieć zaznaczone *include administrators*.
