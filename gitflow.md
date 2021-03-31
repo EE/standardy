@@ -87,6 +87,8 @@ W miejsce `<nazwa_nowego_brancha>` podaj identyfikator nowego brancha. Powinien 
 ### 4. Wprowadzenie zmian w projekcie
 Otwórz swój ulubiony edytor i działaj! 🤞
 
+**Uwaga!** Należy się wystrzegać wprowadzania zbyt wielu zmian w ramach jednego brancha (co skutkuje dużą ilością zmian w ramach jednengo Pull Requesta i utrudnia zrobienie dobrego code review tych zmian). Zmiany wprowadzone w ramach jednego brancha powinny ograniczać się do jednego, konkretnego tematu (np. dodania jednej funkcjonalności albo naprawy jednego błędy). Zmiany muszą być kompletne (to znaczy muszą zawierać wszystko co niezbędne żeby po ich zmergowaniu system nadal działał w pełni prawidłowo), ale w przypadku tematów wymagających dużej liczby zmian należy (na ile to możliwe) dzielić je na mniejsze (kompletne) etapy i wysyłać je w ramach osobnych Pull Requestów (a więc tworzyć na osobnych branchach). Znacznie ułatwi to zachowanie dobrej jakości code review w projektach.
+
 ### 5. Aktualizacja kodu projektu *(opcjonalnie)*
 Jeśli w międzyczasie na branchu *develop* w główny repozytorium projektu pojawiły się nowe commity, możesz zaktualizować swój branch, tak żeby również je zawierał. Nie jest to zawsze konieczne, ale dzięki temu będziesz mieć pewność, że Twoje zmiany nadal działają poprawnie z najnowszą wersją kodu projektu. W razie potrzeby możesz robić to wielokrotnie:
 
