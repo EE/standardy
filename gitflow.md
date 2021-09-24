@@ -8,11 +8,8 @@ Poniższy przewodnik zakłada, że znasz i rozumiesz podstawowe pojęcia związa
 
 Materiały z których będziesz korzystać mogą przedstawiać sposób z pracy z gitem który w różnych szczegółach różni się od tego, co jest opisane poniżej. W Laboratorium EE zawsze obowiązuje wersja opisana w tym dokumencie. Nie martw się jednak – mechanizmy które poznasz są uniwersalne.
 
-Jeśli z kolei zjadłaś swoje zęby na gicie, a długie opisy Cię nudzą, na początku każdego rozdziału zamieściliśmy wersję **TL;DR** – podsumowanie, które przedstawi Ci najważniejsze informacje przy pomocy kilku słów, które tylko Ty potrafisz zrozumieć ;)
-
-Ta wersja przewodnika wykorzystuje komendy konsoli tekstowej. Żeby ułatwić pracę z gitem osobom w firmie niebędącym programistami, planujemy również alternatywną wersję, opartą na wizualnych narzędziach do obsługi gita.
-
 # Spis treści
+* [Pierwsze użycie](#pierwsze-użycie)
 * [Rozpoczęcie pracy nad projektem](#rozpoczęcie-pracy-nad-projektem)
 * [Dodanie zmian do projektu](#dodanie-zmian-do-projektu)
 * [Code review](#code-review)
@@ -22,41 +19,26 @@ Ta wersja przewodnika wykorzystuje komendy konsoli tekstowej. Żeby ułatwić pr
 * [Mergowanie *develop* do *master*](#mergowanie-develop-do-master)
 * [Wskazówki do konfiguracji GitHuba](#wskazówki-do-konfiguracji-githuba)
 
+## Pierwsze użycie
+### 1. Zainstaluj narzędzia
+Żeby skorzystać z tej instrukcji musisz mieć zainstalowane na komputerze:
+* [git](https://git-scm.com/)
+* [github-cli](https://cli.github.com/)
+
+### 2. Zaloguj się do github-cli
+
+Zaloguj się swoim kontem GitHub:
+
+    gh auth login
+   
+*Możesz pozostawić domyślne odpowiedzi na wszystkie pytania. Opcjonalnie możesz zmienić preferowany protokół (HTTPS lub SSH), ale absolutnie kluczowe jest żeby odpowiedzieć pozytywnie na pytanie o synchronizację danych autentykacji między gitem i GitHubem ("Upload your SSH public key to your GitHub account?" dla protokołu SSH lub "Authenticate Git with your GitHub credentials?" dla protokołu HTTPS). Poprawna odpowiedź jest domyślna.*
+
 ## Rozpoczęcie pracy nad projektem
-**TL;DR** Zrób forka, sklonuj go i ustaw *upstream*.
+Utwórz prywatny fork repozytorium i pobierz go na komputer (`nazwa-repozytorium` podmień na nazwę danego repozytorium):
 
-### 1. Stworzenie prywatnego forka
-Zanim zaczniesz pracować nad projektem musisz stworzyć swoją własną prywatną kopię jego repozytorium (*fork*). Żeby to zrobić, otwórz stronę głównego repozytorium tego projektu na GutHubie<sup>1</sup> i naciśnij przycisk "Fork" znajdujący się w prawej górnej części strony:
-
-![fork](gitflow_screens/fork.png)
-
-Po chwili zostaniesz przekierowana na nowo utworzoną stronę Twojego forka.
-
-<sup>1</sup> *Jeśli zamiast strony projektu widzisz błąd 404 lub komunikat o braku dostępu to najprawdopodobniej  nie jesteś zalogowana na GitHubie lub Twoje konto nie zostało jeszcze dodane do GitHubowego zespołu "Laboratorium EE". Zgłoś ten problem [Kazetowi](mailto:krzysztof.zajac@laboratorium.ee ), [Ludwikowi](mailto:ludwik.trammer@laboratorium.ee) lub osobie, która poprosiła Cię o pracę nad projektem.*
-
-### 2. Klon forka
-Pobierz kopię repozytorium na swój komputer. W tym celu naciśnij zielony przycisk "Clone or download" na stronie **Twojego prywatnego forka** na GitHubie:
-
-![clone](gitflow_screens/clone.png)
-
-Upewnij się, że w okienku który się pojawi wybrana jest opcja "Clone with SSH" (przełączanie między wersją SSH i HTTPS znajduje się w prawym górnym rogu okienka). Następnie skopiuj adres wyświetlany w polu tekstowym:
-
-![clone – okienko](gitflow_screens/clone_popup.png)
-
-Wejdź w konsoli tekstowej na swoim komputerze do katalogu w którym chcesz umieścić kod projektu i wydaj komendę:
-
-    git clone <skopiowany adres git repozytorium>
-
-*Jeśli komenda zwraca błąd mówiący o nieznalezieniu repozytorium lub braku praw dostępu: upewnij się że klucz publiczny którego używasz na danym komputerze został dodany w ustawieniach Twojego konta na GitHubie. Jeśli nie wiesz, co to znaczy lub nie jesteś pewna jak to zrobić, skorzystaj z [instrukcji przygotowanej przez zespół GitHuba](https://help.github.com/articles/connecting-to-github-with-ssh/).*
-
-### 3. Dodanie *upstream*
-Kopia repozytorium na Twoim komputerze początkowo połączona jest tylko z Twoim prywatnym forkiem repozytorium projektu. Należy połączyć ją również z głównym repozytorium projektu. W tym celu wejdź na stronę **głównego repozytorium projektu na GitHubie** (czyli tę której adres zaczyna się od "github.com/EE") i skopiuj adres git tego repozytorium znowu korzystając z przycisku "Clone or download".
-
-Następnie w konsoli na swoim komputerze wydaj komendę:
-
-    git remote add upstream <skopiowany adres git repozytorium>
-
-Od tego momentu wydając polecenia gita możesz odwoływać się do tego repozytorium korzystając z nazwy *upstream*. Z kolei do swojego prywatnego forka możesz odwołać się korzystając z nazwy *origin*.
+    gh repo fork --clone ee/nazwa-repozytorium
+    
+Powyższa komenda stworzy Twój własny klon repozytorium `ee/nazwa-repozytorium` i pobierze go na Twój komputer, a następnie ustawi w gicie nazwę Twojego forka jako `origin`, a nazwę głównego firmowego repozytorium jako `upstream`.
 
 ## Dodanie zmian do projektu
 **TL;DR** *Zrób nowego brancha bazując na aktualnym branchu *develop*, zrób commita z [porządnym commit message](https://chris.beams.io/posts/git-commit/), wyślij na swojego forka, zrób pull requesta do developa.*
@@ -138,44 +120,23 @@ Otworzy się edytor tekstu – na samej górze będzie miejsce na wpisanie przez
 
 Zanim zapiszesz plik, przeczytaj informacje znajdujące się w edytorze tekstu pod spodem – sprawdź czy korzystasz z właściwego brancha (*On branch*) i czy do commita trafią właściwe zmiany (*Changes to be committed* i *Changes not staged for commit*). Jeśli okaże się że coś jest nie tak, zamknij edytor bez zapisywania pliku – anuluje to tworzenie commita.
 
-### 8. Wysyłanie commita
-Wyślij commit do swojego prywatnego forka repozytorium na GitHubie:
+### 8. Stworzenie pull requesta
+Użyj poniższej komendy żeby wysłać swoje commity i otworzyć w przeglądarce stronę tworzenia pull requesta:
 
-    git push origin HEAD
+    gh pr create --web
 
-*W powyższym zapisie `origin` odnosi się do Twojego prywatnego forka, a `HEAD` spowoduje że commit zostanie wysłany na branch o takiej samej nazwie, jak ten, na którym właśnie pracujesz lokalnie.*
+W przypadku pytania o to gdzie wysłać zmiany, wybierz z listy swojego prywatnego forka.
 
-### 9. Stworzenie pull requesta
-Wejdź na stronę swojego **prywatnego forka** na GitHubie i kliknij przycisk "New pull request" znajdujący się bezpośrednio ponad listą plików:
-
-![new pull request](gitflow_screens/pull_request.png)
-
-Upewnij się, że przy "base fork" wybrany jest branch *develop* głównego repozytorium projektu, a przy "head fork" branch który utworzyłeś specjalnie do tej zmiany na Twoim prywatnym forku.
-
-![choosing branches](gitflow_screens/pull_branches.png)
-
-Jeszcze raz dokładnie przejrzyj znajdującą się poniżej listę zmian.
-
-Jeśli wszystko się zgadza naciśnij przycisk "Create pull request"
-
-![create pull request](gitflow_screens/pull_create.png)
-
-To już prawie koniec. Pod "Reviewers" dodaj wszystkie osoby które powinny zrobić code review tych zmian. W dużym polu tekstowym możesz dodać dodatkowe informacje (lub pytania czy wątpliwości) dla osób, które będą czytać Twojego pull requesta.
-
-Jeśli nie jest on jeszcze gotowy do zmergowania i tworzysz go tylko w celu uzyskania opinii na temat wersji roboczej, koniecznie ustaw label "work in progress".
-
-![pull settings](gitflow_screens/pull_settings.png)
-
-Na koniec ponownie naciśnij zielony przycisk "Create pull request". Gotowe!
+*Alternatywnie zamiast otwierać w przeglądarce stronę tworzenia pull requesta możesz zrobić go w całości z poziomu konsoli - w tym celu pomiń flagę `--web`.*
 
 ## Code review
 ### Dla recenzentów
 **TL;DR** *Dodaj komentarze i wybierz "Approve" lub "Request changes". Bądź uprzejma. Sprawdź ponownie gdy pojawią się zmiany lub odpowiedzi.*
 
 #### Sprawdź zmiany
-Otwórz pull request i obejrzyj dokładnie wszystkie zmiany widoczne w karcie "Files changed". Dodatkowo możesz pobrać kod pull requesta na swój komputer i uruchomić go, żeby sprawdzić czy wszystko działa tak jak powinno. Instrukcję, jak to zrobić, znajdziesz pod linkiem "command line instructions" na samym dole karty "Conversation":
+Otwórz pull request i obejrzyj dokładnie wszystkie zmiany widoczne w karcie "Files changed". Dodatkowo możesz pobrać kod pull requesta na swój komputer i uruchomić go, żeby sprawdzić czy wszystko działa tak jak powinno. W tym celu użyj komendy `gh pr checkout` (gdzie `identyfikator` to numer danego pull requesata lub opcjonalnie jego pełen adres URL):
 
-![command line checkout](gitflow_screens/command_line_checkout.png)
+    gh pr checkout identyfikator
 
 Oceń poprawność merytoryczną pull requesta:
 
@@ -199,6 +160,8 @@ Wybierz opcję "Approve" jeśli uważasz, że zmiany widoczne w Pull Requeście 
 
 Powtórz ten proces, gdy twórczyni pull requesta powiadomi Cię o wprowadzeniu zmian lub odniesie się do Twoich komentarzy. Wytłumacz w komentarzach jakie jeszcze zmiany są konieczne i wybierz "Request changes" lub wybierz "Approve", jeśli tym razem pull request jest gotowy.
 
+*Alternatywnie, jeśli wolisz, możesz cały ten proces przeprowadzić w konsoli, korzystając z takioch jak [`gh pr diff`](https://cli.github.com/manual/gh_pr_diff), [`gh pr comment`](https://cli.github.com/manual/gh_pr_comment) i [`gh pr review`](https://cli.github.com/manual/gh_pr_review).*
+
 ### Dla twórców
 Odnieś się do wszystkich komentarzy od recenzentów. Spróbuj przekonać ich do swojego zdania lub popraw pull request. W tym celu w tym samym branchu dodaj **nowy** commit ze zmianami (patrz punkty 4-8 z instrukcji "Dodanie zmian do projektu"). Nie zapomnij dodać komentarzy informujących recenzentów, że wprowadziłaś zmiany o które prosili.
 
@@ -211,34 +174,27 @@ Choć zgodnie z ustaleniami jedna zgoda jest wystarczająca, należy podchodzić
 
 Merguje dowolna członkini zespołu dev (w tym twórca). Mergując należy zawsze korzystać z opcji **Squash and merge**. Przed ostatecznym zmergowaniem ("Confirm squash and merge") upewnij się, że zaproponowane tytuł i opis mają sens.
 
-**Uwaga!** *"Squash and merge"* może nie być domyślnie wybraną opcją przy mergowaniu. W takim wypadku **trzeba** wybrać ją przy pomocy strzałki znajdującej się po prawej stronie przycisku mergowania.
+Zmergować możesz przy pomocy komendy `gh pr merge -s identyfikator` (gdzie `identyfikator` to numer lub URL pull requesta - możesz go pominąć jeśli jesteś aktualnie na branchu związanym z tym pull requestem) lub przy pomocy interfejsu webowego GitHuba. W tym drugim przypadku pamiętaj, że opcja *"Squash and merge"* może nie być domyślnie wybraną opcją przy mergowaniu. W takim wypadku **trzeba** wybrać ją przy pomocy strzałki znajdującej się po prawej stronie przycisku mergowania.
 
 ## Mergowanie *develop* do *master*
 **TL;DR** *Zrób pull requesta z develop do master. Merge w trybie "create a merge commit".*
 
 Oprogramowanie umieszczone na serwerze produkcyjnym lub wydane jako stabilna wersja powinno zawsze bazować na branchu *master*. W związku z tym pierwszym krokiem wrzucenia nowej wersji na serwer lub wydania nowej wersji jest zawsze spowodowanie, żeby zmiany nad którymi zespół pracował na branchu *develop* znalazły się na branchu *master*.
 
-Żeby to zrobić, wejdź na stronę głównego repozytorium projektu na GitHubie i kliknij przycisk "New pull request" znajdujący się bezpośrednio ponad listą plików:
+Żeby to zrobić utwórz Pull Requesta z brancha develop na branch master:
 
-![new pull request](gitflow_screens/pull_request.png)
+    gh pr create --head develop --base master -t "merge develop into master"
+    
+A następnie oznacz go do automatycznego zmergowania po otrzymaniu pozytywnwego code review (uwaga - wymaga to [włączonej opcji auto-merge w repozytorium](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/managing-auto-merge-for-pull-requests-in-your-repository)):
 
-Jako "base" wybierz *master*, a jako "compare" wybierz develop:
+    gh pr merge develop -m --auto
+    
+Potem poczekaj na code review. Po nim (i przejściu testów) pull request powinien sam się automatycznie zmergować (jeśli nie mogłeś lub zapomniałeś go oznaczyć do automatycznego zmergowania powyższą komendą, możesz zmergować go teraz komendą `gh pr merge develop -m`).
 
-![choosing branches](gitflow_screens/pull_branches_master.png)
-
-Przejrzyj znajdującą się poniżej listę commitów które zostaną dodane do branchu *master*. Jeśli wszystko się zgadza, naciśnij przycisk "Create pull request":
-
-![create pull request](gitflow_screens/pull_create.png)
-
-Takie pull requesty nie wymagają code review (jako że nie wiążą się z dodaniem nowego kodu), ale powinny zostać zaakceptowane przynmajmniej przez jedną osobę. Dlatego pamiętaj, żeby wypełnić pole "Reviewers".
-
-Mergując należy zawsze korzystać z opcji **Create a merge commit** - inaczej niż w przypadku zwykłych pull requestów. Jest to bardzo ważne - użycie innej opcji może doprowadzić do konfliktów między branchami w przyszłości.
-
-**Uwaga!** *"Create a merge commit"* może nie być domyślnie wybraną opcją przy mergowaniu. W takim wypadku **trzeba** wybrać ją przy pomocy strzałki znajdującej się po prawej stronie przycisku mergowania.
+**Uwaga!** Jeśli jednak merdżujesz z interfjesu webowego GitHuba, zawsze korzystaj z opcji **Create a merge commit** - inaczej niż w przypadku zwykłych pull requestów. Jest to bardzo ważne - użycie innej opcji może doprowadzić do konfliktów między branchami w przyszłości. *"Create a merge commit"* może nie być domyślnie wybraną opcją przy mergowaniu. W takim wypadku **trzeba** wybrać ją przy pomocy strzałki znajdującej się po prawej stronie przycisku mergowania.
 
 
 ## Wskazówki do konfiguracji GitHuba
 * [Włącz *Two-factor authentication*.](https://help.github.com/articles/securing-your-account-with-two-factor-authentication-2fa/)
-* [Ustaw swój klucz publiczny SSH.](https://help.github.com/articles/connecting-to-github-with-ssh/)
 * [Jeśli używasz konta GitHuba założonego na prywatnym mailu skorzystaj z opcji *Custom Routing* żeby powiadomienia dotyczące repozytoriów EE przychodziły na Twojego służbowego maila.](https://help.github.com/articles/choosing-the-delivery-method-for-your-notifications/#customizing-email-routes-per-organization)
 * [Pamiętaj, żeby ustawić awatar w zakładce.](https://help.github.com/articles/setting-your-profile-picture/)
