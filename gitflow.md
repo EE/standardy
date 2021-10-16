@@ -19,7 +19,7 @@ Ta wersja przewodnika wykorzystuje komendy konsoli tekstowej. Żeby ułatwić pr
   * [Dla recenzentów](#dla-recenzentów)
   * [Dla twórców](#dla-twórców)
   * [Mergowanie](#mergowanie)
-* [Mergowanie *develop* do *master*](#mergowanie-develop-do-master)
+* [Mergowanie *develop* do *main*](#mergowanie-develop-do-main)
 * [Wskazówki do konfiguracji GitHuba](#wskazówki-do-konfiguracji-githuba)
 
 ## Rozpoczęcie pracy nad projektem
@@ -62,11 +62,11 @@ Od tego momentu wydając polecenia gita możesz odwoływać się do tego repozyt
 **TL;DR** *Zrób nowego brancha bazując na aktualnym branchu *develop*, zrób commita z [porządnym commit message](https://chris.beams.io/posts/git-commit/), wyślij na swojego forka, zrób pull requesta do developa.*
 
 ### 1. Przełączenie się na *develop*
-W każdym repozytorium w Laboratorium EE powinny istnieć co najmniej dwa branche: *develop* i *master*. Ten pierwszy służy do bieżącej pracy nad projektem. Drugi powinien odzwierciedlać stan kodu projektu, który znajduje się obecnie na serwerze produkcyjnym (lub w przypadku samodzielnych aplikacji: stan kodu ostatnio wydanej wersji). Jako że praca nad projektem odbywa się na branchu *develop*<sup>1</sup>, na początku upewnij się, że korzystasz obecnie z tego brancha:
+W każdym repozytorium w Laboratorium EE powinny istnieć co najmniej dwa branche: *develop* i *main*. Ten pierwszy służy do bieżącej pracy nad projektem. Drugi powinien odzwierciedlać stan kodu projektu, który znajduje się obecnie na serwerze produkcyjnym (lub w przypadku samodzielnych aplikacji: stan kodu ostatnio wydanej wersji). Jako że praca nad projektem odbywa się na branchu *develop*<sup>1</sup>, na początku upewnij się, że korzystasz obecnie z tego brancha:
 
     git checkout develop
 
-<sup>1</sup> *Od czasu do czasu może przydarzyć się sytuacja, gdy zmiana musi zostać zrobiona bezpośrednio na branchu *master*. Dzieje się tak wtedy, gdy trzeba wydać poprawkę do aktualnie wdrożonej wersji oprogramowania, z pominięciem zmian nad którymi trwa praca w branchu *develop*. Wystarczy wtedy wszędzie w tej instrukcji podmienić nazwę "develop" na "master".*
+<sup>1</sup> *Od czasu do czasu może przydarzyć się sytuacja, gdy zmiana musi zostać zrobiona bezpośrednio na branchu *main*. Dzieje się tak wtedy, gdy trzeba wydać poprawkę do aktualnie wdrożonej wersji oprogramowania, z pominięciem zmian nad którymi trwa praca w branchu *develop*. Wystarczy wtedy wszędzie w tej instrukcji podmienić nazwę "develop" na "main".*
 
 ### 2. Pobranie zmian z głównego repozytorium
 Pobierz zmiany z głównego repozytorium projektu, żeby mieć pewność że pracujesz na najnowszej wersji kodu:
@@ -213,20 +213,20 @@ Merguje dowolna członkini zespołu dev (w tym twórca). Mergując należy zawsz
 
 **Uwaga!** *"Squash and merge"* może nie być domyślnie wybraną opcją przy mergowaniu. W takim wypadku **trzeba** wybrać ją przy pomocy strzałki znajdującej się po prawej stronie przycisku mergowania.
 
-## Mergowanie *develop* do *master*
-**TL;DR** *Zrób pull requesta z develop do master. Merge w trybie "create a merge commit".*
+## Mergowanie *develop* do *main*
+**TL;DR** *Zrób pull requesta z develop do main. Merge w trybie "create a merge commit".*
 
-Oprogramowanie umieszczone na serwerze produkcyjnym lub wydane jako stabilna wersja powinno zawsze bazować na branchu *master*. W związku z tym pierwszym krokiem wrzucenia nowej wersji na serwer lub wydania nowej wersji jest zawsze spowodowanie, żeby zmiany nad którymi zespół pracował na branchu *develop* znalazły się na branchu *master*.
+Oprogramowanie umieszczone na serwerze produkcyjnym lub wydane jako stabilna wersja powinno zawsze bazować na branchu *main*. W związku z tym pierwszym krokiem wrzucenia nowej wersji na serwer lub wydania nowej wersji jest zawsze spowodowanie, żeby zmiany nad którymi zespół pracował na branchu *develop* znalazły się na branchu *main*.
 
 Żeby to zrobić, wejdź na stronę głównego repozytorium projektu na GitHubie i kliknij przycisk "New pull request" znajdujący się bezpośrednio ponad listą plików:
 
 ![new pull request](gitflow_screens/pull_request.png)
 
-Jako "base" wybierz *master*, a jako "compare" wybierz develop:
+Jako "base" wybierz *main*, a jako "compare" wybierz develop:
 
 ![choosing branches](gitflow_screens/pull_branches_master.png)
 
-Przejrzyj znajdującą się poniżej listę commitów które zostaną dodane do branchu *master*. Jeśli wszystko się zgadza, naciśnij przycisk "Create pull request":
+Przejrzyj znajdującą się poniżej listę commitów które zostaną dodane do branchu *main*. Jeśli wszystko się zgadza, naciśnij przycisk "Create pull request":
 
 ![create pull request](gitflow_screens/pull_create.png)
 
