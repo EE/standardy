@@ -31,6 +31,7 @@ Lista standardowych komponentów których używamy w projektach przy budowaniu b
 | Skład plików media w AWS S3 (i innych CDNach) | [django-storages](https://django-storages.readthedocs.io) |
 | Przetwarzanie obrazów                       | [django-imagekit][django-imagekit]
 | Import i eksport danych                     | [django-import-export][django-import-export]            |
+| Zaawansowane wizualnie emaile               | [django-mjml](https://github.com/liminspace/django-mjml) |
 
 [generator-ee]: https://github.com/EE/generator-ee
 [django]: https://www.djangoproject.com/
