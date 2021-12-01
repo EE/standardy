@@ -36,7 +36,10 @@
 6. Trzymamy się zasady *mobile first* - style powinny opisywać najmniejszy obsługiwany breakpoint, z modyfikacjami dla większych breakpointów jako odrębny blok `@media`
 7. W projektach powinien być skonfigurowany linter [style-lint](https://stylelint.io/) ([wzorcowa konfiguracja](https://github.com/EE/generator-ee/blob/develop/%7B%7Bcookiecutter.project_slug%7D%7D/.stylelintrc)), skonfigurowany z systemem CI.
 8. O ile nie stoi to w sprzeczności z wymaganiami klienta, budujemy strony w oparciu o Material Design.
-   
+
+## Maile
+1. Do pisania mailów używamy paczki [mjml](https://mjml.io/) - zapewnia kompatybilność z większością klientów pocztowych
+
 ## Na przyszłość
 1. Wkrótce przejdziemy na Vue 3, ale chcemy odczekać aż ekosystem Vue się dostosuje do tej wersji.
 1. Po przejściu na Vue 3, powinniśmy rozważyć zastąpienie JavaScriptu przez [TypeScript](https://www.typescriptlang.org/).
