@@ -38,7 +38,7 @@
 8. O ile nie stoi to w sprzeczności z wymaganiami klienta, budujemy strony w oparciu o Material Design.
 
 ## Maile
-1. Do pisania mailów używamy paczki [mjml](https://mjml.io/) - zapewnia kompatybilność z większością klientów pocztowych
+1. Do pisania zaawansowanych wizualnie maili używamy paczki [mjml](https://mjml.io/) - zapewnia kompatybilność z większością klientów pocztowych
 
 ## Na przyszłość
 1. Wkrótce przejdziemy na Vue 3, ale chcemy odczekać aż ekosystem Vue się dostosuje do tej wersji.
